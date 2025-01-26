@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  border-bottom: 1px solid var(--blue);
+
+  &__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    color: var(--green);
+    border-right: 1px solid var(--blue);
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+
+    li {
+      border-right: 1px solid var(--blue);
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: 0.2s linear;
+
+      &.active {
+        border-bottom: 3px solid var(--orange);
+      }
+
+      a {
+        display: flex;
+        padding: 1rem 2rem;
+      }
+    }
+
+    li:last-child {
+      margin-left: auto;
+      border-left: 1px solid var(--blue);
+      border-right: none;
+    }
+  }
+}
