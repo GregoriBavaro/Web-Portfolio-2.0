@@ -31,6 +31,37 @@ a {
   text-decoration: none;
 }
 
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-exit {
+  animation: slideOut 0.5s forwards;
+}
+
+.page-enter {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

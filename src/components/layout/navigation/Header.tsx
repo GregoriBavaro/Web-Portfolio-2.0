@@ -1,4 +1,4 @@
-import Navigation from "./Navigation";
+import TransitionLink from "../../../utils/TransitionLink";
 
 import styles from "./Header.module.scss";
 
@@ -18,9 +18,9 @@ const Header = () => {
       <nav className={styles.header__navigation}>
         <ul>
           {PATHS.map(({ id, title, path }) => (
-            <Navigation key={id} href={path}>
+            <TransitionLink href={path} id={id}>
               {title}
-            </Navigation>
+            </TransitionLink>
           ))}
         </ul>
       </nav>
