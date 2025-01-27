@@ -17,13 +17,12 @@
 
   ul {
     display: flex;
-    list-style-type: none;
 
     li {
       border-right: 1px solid var(--blue);
       border-bottom: 3px solid transparent;
       cursor: pointer;
-      transition: 0.2s linear;
+      transition: 0.2s ease-in-out;
 
       &.active {
         border-bottom: 3px solid var(--orange);
@@ -39,6 +38,7 @@
       margin-left: auto;
       border-left: 1px solid var(--blue);
       border-right: none;
+      color: var(--green);
     }
   }
 }

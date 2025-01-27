@@ -1,2 +1,38 @@
 .footer {
+  display: flex;
+  border-top: 1px solid var(--blue);
+  margin-top: auto;
+  color: var(--green);
+
+  &__name {
+    padding: 0.8rem 1.5rem;
+    border-right: 1px solid var(--blue);
+    align-items: center;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    li {
+      border-right: 1px solid var(--blue);
+    }
+
+    li:last-child {
+      margin-left: auto;
+      border-left: 1px solid var(--blue);
+      border-right: none;
+    }
+
+    a {
+      display: flex;
+      gap: 0.7rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }
 }

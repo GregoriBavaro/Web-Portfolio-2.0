@@ -27,14 +27,14 @@ const TransitionLink = ({ children, href, id, ...props }: TransitionLinkProps) =
 
     main?.classList.add("page-exit");
 
-    await sleep(500);
+    await sleep(300);
 
     router.push(href);
 
     main?.classList.remove("page-exit");
     main?.classList.add("page-enter");
 
-    await sleep(500);
+    await sleep(300);
 
     main?.classList.remove("page-enter");
   };
