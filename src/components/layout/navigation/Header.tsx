@@ -18,7 +18,7 @@ const Header = () => {
       <nav className={styles.header__navigation}>
         <ul>
           {PATHS.map(({ id, title, path }) => (
-            <Navigation index={id} href={path}>
+            <Navigation key={id} href={path}>
               {title}
             </Navigation>
           ))}

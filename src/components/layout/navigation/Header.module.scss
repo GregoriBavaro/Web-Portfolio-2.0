@@ -4,9 +4,9 @@
 
   &__name {
     display: flex;
-    justify-content: center;
+    padding: 0 0 0 1.5rem;
     align-items: center;
-    width: 10rem;
+    width: 25rem;
     color: var(--green);
     border-right: 1px solid var(--blue);
   }
@@ -31,7 +31,7 @@
 
       a {
         display: flex;
-        padding: 1rem 2rem;
+        padding: 0.8rem 1.5rem;
       }
     }
 

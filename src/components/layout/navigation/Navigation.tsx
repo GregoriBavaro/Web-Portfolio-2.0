@@ -8,14 +8,13 @@ import styles from "./Header.module.scss";
 interface NavigationProps extends LinkProps {
   children: React.ReactNode;
   href: string;
-  index: number;
 }
 
-const Navigation = ({ children, href, index }: NavigationProps) => {
+const Navigation = ({ children, href }: NavigationProps) => {
   const pathname = usePathname();
 
   return (
-    <li id={index.toString()} className={pathname === href ? styles.active : ""}>
+    <li className={pathname === href ? styles.active : ""}>
       <Link href={href}>{children}</Link>
     </li>
   );
