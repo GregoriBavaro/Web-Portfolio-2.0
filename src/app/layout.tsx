@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Footer from "../components/layout/footer/Footer";
 import Navigation from "../components/layout/navigation/Header";
+import Blob from "../components/ui/blob/Blob";
 
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <Blob/>
       </body>
     </html>
   );

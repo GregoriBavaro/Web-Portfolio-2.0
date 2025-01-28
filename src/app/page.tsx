@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import Hero from "../components/layout/hero/Hero";
+
 export const metadata: Metadata = {
   title: "Gregori Bavaro | Frontend Developer & Web Solutions",
   description:
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const Home = () => {
-  return <div>Home</div>;
+  return <Hero />;
 };
 
 export default Home;

@@ -1,0 +1,68 @@
+.hero {
+  padding: 0 0 5rem 20rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  gap: 2rem;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 100;
+    }
+
+    h4 {
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: 100;
+      color: var(--purple);
+    }
+  }
+
+  &__info {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      li:first-child {
+        p {
+          span:last-child {
+            color: var(--foreground);
+          }
+        }
+      }
+
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        h5 {
+          color: var(--steel-blue);
+        }
+
+        p {
+          display: flex;
+          gap: 0.7rem;
+          span:first-child {
+            color: var(--purple);
+          }
+
+          span:nth-of-type(2) {
+            color: var(--green);
+          }
+
+          span:last-child {
+            color: var(--brown);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 .footer {
   display: flex;
-  border-top: 1px solid var(--blue);
+  border-top: 1px solid var(--steel-blue);
   margin-top: auto;
   color: var(--green);
 
   &__name {
     padding: 0.8rem 1.5rem;
-    border-right: 1px solid var(--blue);
+    border-right: 1px solid var(--steel-blue);
     align-items: center;
 
     span {
@@ -20,12 +20,12 @@
     width: 100%;
 
     li {
-      border-right: 1px solid var(--blue);
+      border-right: 1px solid var(--steel-blue);
     }
 
     li:last-child {
       margin-left: auto;
-      border-left: 1px solid var(--blue);
+      border-left: 1px solid var(--steel-blue);
       border-right: none;
     }
 

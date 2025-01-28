@@ -4,6 +4,9 @@
   --green: rgb(56, 185, 151);
   --blue: rgb(17, 35, 51);
   --orange: rgb(254, 165, 95);
+  --purple: rgb(36, 67, 143);
+  --brown: rgb(192, 124, 118);
+  --steel-blue: rgb(26, 54, 80);
 }
 
 html,
@@ -41,31 +44,33 @@ ul {
 main {
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
 }
 
 .page-exit {
-  animation: slideOut 0.5s forwards;
+  animation: fadeOut 0.15s forwards;
 }
 
 .page-enter {
-  animation: slideIn 0.5s forwards;
+  animation: fadeIn 0.15s forwards;
 }
 
-@keyframes slideOut {
+@keyframes fadeIn {
   from {
-    transform: translateX(0);
+    opacity: 0;
   }
   to {
-    transform: translateX(-100vw);
+    opacity: 1;
   }
 }
 
-@keyframes slideIn {
+@keyframes fadeOut {
   from {
-    transform: translateX(100vw);
+    opacity: 1;
   }
   to {
-    transform: translateX(0);
+    opacity: 0;
   }
 }
 
