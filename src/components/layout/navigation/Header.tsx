@@ -18,7 +18,7 @@ const Header = () => {
       <nav className={styles.header__navigation}>
         <ul>
           {PATHS.map(({ id, title, path }) => (
-            <TransitionLink href={path} id={id}>
+            <TransitionLink key={id} href={path}>
               {title}
             </TransitionLink>
           ))}

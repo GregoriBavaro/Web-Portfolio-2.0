@@ -9,14 +9,13 @@ import styles from "../components/layout/navigation/Header.module.scss";
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
   href: string;
-  id: number;
 }
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const TransitionLink = ({ children, href, id, ...props }: TransitionLinkProps) => {
+const TransitionLink = ({ children, href, ...props }: TransitionLinkProps) => {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -46,7 +45,7 @@ const TransitionLink = ({ children, href, id, ...props }: TransitionLinkProps) =
   };
 
   return (
-    <li key={id} className={pathname === href ? styles.active : ""}>
+    <li className={pathname === href ? styles.active : ""}>
       <Link onClick={(e) => handleTransition(e, href)} href={href} {...props}>
         {children}
       </Link>

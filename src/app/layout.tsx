@@ -22,19 +22,21 @@ export const metadata: Metadata = {
     "Explore the portfolio of Gregori Bavaro, a skilled web developer specializing in web design, development, and SEO optimization. Discover innovative projects and solutions crafted with React, Next.js, SCSS, and more.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navigation />
         <main>{children}</main>
         <Footer />
-        <Blob/>
+        <Blob />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
