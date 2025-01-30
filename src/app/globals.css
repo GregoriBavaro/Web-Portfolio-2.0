@@ -1,12 +1,27 @@
 :root {
   --background: rgb(1, 22, 39);
-  --foreground: rgb(229, 233, 240);
+  --foreground: rgb(204, 204, 204); /*silver-gray*/
   --green: rgb(56, 185, 151);
+  --emerald-green: rgb(76, 175, 80);
   --blue: rgb(17, 35, 51);
-  --orange: rgb(254, 165, 95);
-  --purple: rgb(36, 67, 143);
-  --brown: rgb(192, 124, 118);
+  --dark-blue: rgb(1, 19, 31);
   --steel-blue: rgb(26, 54, 80);
+  --bright-blue: rgb(30, 136, 229);
+  --sky-blue: rgb(66, 165, 245);
+  --orange: rgb(254, 165, 95);
+  --red-orange: rgb(239, 83, 80);
+  --amber: rgb(255, 202, 40);
+  --purple: rgb(36, 67, 143);
+  --dark-purple: rgb(11, 31, 57);
+  --deep-purple: rgb(126, 87, 194);
+  --orchid-purple: rgb(171, 71, 188);
+  --brown: rgb(192, 124, 118);
+
+  --background-image: linear-gradient(
+    to right,
+    var(--dark-purple) 0%,
+    var(--dark-blue) 100%
+  );
 }
 
 html,
@@ -18,6 +33,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  background-image: var(--background-image);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,32 +62,6 @@ main {
   overflow: hidden;
   height: 100%;
   display: flex;
-}
-
-.page-exit {
-  animation: fadeOut 0.15s forwards;
-}
-
-.page-enter {
-  animation: fadeIn 0.15s forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 @media (prefers-color-scheme: dark) {

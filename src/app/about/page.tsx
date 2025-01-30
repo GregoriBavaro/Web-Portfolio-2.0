@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Sidebar from "../../components/ui/sidebar/Sidebar";
 
 export const metadata: Metadata = {
   title: "About Me | Gregori Bavaro",
@@ -7,7 +8,11 @@ export const metadata: Metadata = {
 };
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 };
 
 export default About;

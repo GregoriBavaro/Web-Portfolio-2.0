@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  user-select: none;
   border-bottom: 1px solid var(--steel-blue);
 
   &__name {
