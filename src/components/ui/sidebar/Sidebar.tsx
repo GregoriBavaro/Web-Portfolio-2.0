@@ -38,7 +38,7 @@ interface SidebarProps {
     id: number;
     title: string;
     folderColor: string;
-    list: Array<{ id: number; title: string; text: string }>;
+    list: Array<{ id: number; title: string; text: string[] }>;
   }>;
 }
 
@@ -73,7 +73,15 @@ const Sidebar = ({ data }: SidebarProps) => {
                     style={{ rotate: !expendedMenus[id] ? "-90deg" : "0deg" }}
                   />
                   <FaFolderClosed style={{ color: `var(${folderColor})` }} />
-                  {title}
+                  <span
+                    style={{
+                      color: expendedMenus[id]
+                        ? "var(--white)"
+                        : "var(--foreground)",
+                    }}
+                  >
+                    {title}
+                  </span>
                 </div>
                 <AnimatePresence>
                   {expendedMenus[id] && (
@@ -89,12 +97,17 @@ const Sidebar = ({ data }: SidebarProps) => {
                           }
                           onClick={() => setShowDocument(title)}
                         >
-                          <BiSolidInfoCircle
+                          <BiSolidInfoCircle />
+                          <span
                             style={{
-                              color: "var(--sky-blue)",
+                              color:
+                                title === showDocument
+                                  ? "var(--white)"
+                                  : "var(--foreground)",
                             }}
-                          />
-                          {title}
+                          >
+                            {title}
+                          </span>
                         </li>
                       ))}
                     </m.ul>

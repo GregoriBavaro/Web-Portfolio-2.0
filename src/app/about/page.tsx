@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Sidebar from "../../components/ui/sidebar/Sidebar";
+import TabsContent from "../../components/layout/tabsContent/TabsContent";
 
 import { MENU_LIST } from "../../db/about";
 
@@ -13,6 +14,7 @@ const About = () => {
   return (
     <>
       <Sidebar data={MENU_LIST} />
+      <TabsContent data={MENU_LIST}/>
     </>
   );
 };

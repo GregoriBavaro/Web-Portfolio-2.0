@@ -12,7 +12,7 @@ interface SidebarMenu {
 export const useSidebarMenu = create<SidebarMenu>((set) => ({
   isOpen: true,
   expendedMenus: { 0: true },
-  showDocument: "summery.md",
+  showDocument: "",
   setOpen: (isOpen: boolean) => set({ isOpen }),
   toggleMenu: (id: number) =>
     set((state) => ({

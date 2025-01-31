@@ -1,0 +1,75 @@
+.tabsContent {
+  width: 100%;
+  overflow: hidden;
+
+  &__tab {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--midnight-blue);
+
+    &-active {
+      width: fit-content;
+      overflow: hidden;
+      background-color: rgb(9, 29, 52);
+
+      div {
+        height: 3.3rem;
+        display: flex;
+        white-space: nowrap;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0 1rem;
+
+        span {
+          display: flex;
+          align-items: center;
+          font-size: 1.5rem;
+          height: 100%;
+        }
+      }
+    }
+
+    span:nth-child(2) {
+      display: flex;
+      height: 3.3rem;
+      border-bottom: 1px solid var(--steel-blue);
+      flex-grow: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1rem 2rem 0rem 2.5rem;
+    white-space: nowrap;
+    height: calc(100% - 3.5rem);
+    width: 100%;
+    overflow: auto;
+
+    &-numbers {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+
+      li {
+        opacity: 0.5;
+      }
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+
+      a {
+        color: var(--red-orange);
+      }
+
+      span {
+        color: var(--green)
+      }
+    }
+  }
+}

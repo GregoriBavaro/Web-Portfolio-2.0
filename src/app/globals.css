@@ -1,13 +1,15 @@
 :root {
   --background: rgb(1, 22, 39);
-  --foreground: rgb(204, 204, 204); /*silver-gray*/
+  --foreground: rgb(150, 170, 189); /*silver-gray*/
   --green: rgb(56, 185, 151);
   --emerald-green: rgb(76, 175, 80);
   --blue: rgb(17, 35, 51);
   --dark-blue: rgb(1, 19, 31);
   --steel-blue: rgb(26, 54, 80);
+  --midnight-blue: rgb(6, 25, 44);
   --bright-blue: rgb(30, 136, 229);
   --sky-blue: rgb(66, 165, 245);
+  --react-blue: rgb(2, 136, 209);
   --orange: rgb(254, 165, 95);
   --red-orange: rgb(239, 83, 80);
   --amber: rgb(255, 202, 40);
@@ -16,12 +18,22 @@
   --deep-purple: rgb(126, 87, 194);
   --orchid-purple: rgb(171, 71, 188);
   --brown: rgb(192, 124, 118);
+  --slate-gray: rgb(96, 123, 150);
+  --white: rgb(255, 255, 255);
 
   --background-image: linear-gradient(
     to right,
     var(--dark-purple) 0%,
     var(--dark-blue) 100%
   );
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -62,6 +74,19 @@ main {
   overflow: hidden;
   height: 100%;
   display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  background-clip: content-box;
 }
 
 @media (prefers-color-scheme: dark) {

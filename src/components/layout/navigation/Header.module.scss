@@ -2,12 +2,13 @@
   display: flex;
   user-select: none;
   border-bottom: 1px solid var(--steel-blue);
+  background-color: var(--midnight-blue);
 
   &__name {
     display: flex;
     padding: 0 0 0 1.5rem;
     align-items: center;
-    width: 25rem;
+    min-width: 304.46px;
     color: var(--green);
     border-right: 1px solid var(--steel-blue);
   }
@@ -27,6 +28,7 @@
 
       &.active {
         border-bottom: 3px solid var(--orange);
+        color: var(--white)
       }
 
       a {

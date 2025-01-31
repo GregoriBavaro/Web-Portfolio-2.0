@@ -2,6 +2,7 @@
   user-select: none;
   border-right: 1px solid var(--steel-blue);
   min-width: 304.46px;
+  background-color: var(--midnight-blue);
 
   svg {
     transition: 0.18s ease-in-out;
@@ -12,8 +13,10 @@
     gap: 0.5rem;
     align-items: center;
     cursor: pointer;
-    padding: 1rem 3rem 1rem 1rem;
+    padding: 0 3rem 0 1rem;
     border-bottom: 1px solid var(--steel-blue);
+    height: 3.3rem;
+    color: var(--white);
 
     svg {
       font-size: 1.3rem;
@@ -32,6 +35,10 @@
     overflow: hidden;
     margin-left: 1rem;
     margin-top: 1rem;
+
+    span:hover {
+      color: var(--white) !important;
+    }
   }
 
   &__navigation-item {
@@ -73,6 +80,7 @@
 
         svg {
           font-size: 1.8rem;
+          color: var(--sky-blue);
         }
       }
     }
