@@ -1,7 +1,11 @@
 .sidebar {
   user-select: none;
   border-right: 1px solid var(--steel-blue);
-  min-width: 318px;
+  min-width: 304.46px;
+
+  svg {
+    transition: 0.18s ease-in-out;
+  }
 
   &__header {
     display: flex;
@@ -44,9 +48,22 @@
 
     &__submenu {
       display: flex;
+      position: relative;
       flex-direction: column;
       gap: 0.3rem;
       padding: 0.5rem 0rem 0rem 1.5rem;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0.1px;
+        height: 100%;
+        background-color: var(--foreground);
+        opacity: 0.2;
+        top: 0;
+        left: 0.4rem;
+      }
 
       &-item {
         display: flex;

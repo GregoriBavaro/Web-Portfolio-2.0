@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Sidebar from "../../components/ui/sidebar/Sidebar";
 
+import { MENU_LIST } from "../../db/about";
+
 export const metadata: Metadata = {
   title: "About Me | Gregori Bavaro",
   description:
@@ -10,7 +12,7 @@ export const metadata: Metadata = {
 const About = () => {
   return (
     <>
-      <Sidebar />
+      <Sidebar data={MENU_LIST} />
     </>
   );
 };

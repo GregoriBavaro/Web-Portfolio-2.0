@@ -1,8 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion as m } from "framer-motion";
-
-import { useState } from "react";
+import { useSidebarMenu } from "../../../store/store";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { FaFolderClosed } from "react-icons/fa6";
@@ -10,58 +9,7 @@ import { BiSolidInfoCircle } from "react-icons/bi";
 
 import styles from "./Sidebar.module.scss";
 
-const MENU_LIST = [
-  {
-    id: 0,
-    title: "bio",
-    folderColor: "--red-orange",
-    list: [
-      { id: 0, title: "summery.md", text: "" },
-      { id: 1, title: "career-goals.md", text: "" },
-      { id: 3, title: "fun-facts.md", text: "" },
-    ],
-  },
-  {
-    id: 1,
-    title: "languages",
-    folderColor: "--amber",
-    list: [
-      { id: 0, title: "programming-languages.md", text: "" },
-      { id: 1, title: "spoken-languages.md", text: "" },
-    ],
-  },
-  {
-    id: 2,
-    title: "interest",
-    folderColor: "--emerald-green",
-    list: [
-      { id: 0, title: "web-development.md", text: "" },
-      { id: 1, title: "open-source-contributions.md", text: "" },
-      { id: 3, title: "hobbies.md", text: "" },
-    ],
-  },
-  {
-    id: 3,
-    title: "education",
-    folderColor: "--deep-purple",
-    list: [
-      { id: 0, title: "high-school.md", text: "" },
-      { id: 1, title: "university.md", text: "" },
-      { id: 2, title: "certifications.md", text: "" },
-    ],
-  },
-  {
-    id: 4,
-    title: "experience",
-    folderColor: "--orchid-purple",
-    list: [
-      { id: 0, title: "work.md", text: "" },
-      { id: 1, title: "freelance.md", text: "" },
-    ],
-  },
-];
-
-const topicStyles = {
+const accordionAnimation = {
   initial: {
     height: 0,
   },
@@ -85,61 +33,73 @@ const topicStyles = {
   },
 };
 
-const Sidebar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(true);
-  const [clickedMenu, setClickedMenu] = useState<{ [id: number]: boolean }>({});
+interface SidebarProps {
+  data: Array<{
+    id: number;
+    title: string;
+    folderColor: string;
+    list: Array<{ id: number; title: string; text: string }>;
+  }>;
+}
+
+const Sidebar = ({ data }: SidebarProps) => {
+  const { isOpen, expendedMenus, toggleMenu, showDocument, setShowDocument } =
+    useSidebarMenu();
 
   const handleMenu = () => {
-    setIsMenuOpen((isMenuOpen) => !isMenuOpen);
+    useSidebarMenu.setState((state) => ({ isOpen: !state.isOpen }));
   };
 
   const handleClickedTopic = (id: number) => {
-    setClickedMenu((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+    toggleMenu(id);
   };
 
   return (
     <section className={styles.sidebar}>
       <div className={styles.sidebar__header} onClick={handleMenu}>
-        <IoIosArrowDown style={{ rotate: !isMenuOpen ? "-90deg" : "0deg" }} />
+        <IoIosArrowDown style={{ rotate: !isOpen ? "-90deg" : "0deg" }} />
         <span>personal-info</span>
       </div>
       <AnimatePresence>
-        {isMenuOpen && (
-          <m.ul {...topicStyles} className={styles.sidebar__navigation}>
-            {MENU_LIST.map(({ id, title, list, folderColor }) => (
+        {isOpen && (
+          <m.ul {...accordionAnimation} className={styles.sidebar__navigation}>
+            {data.map(({ id, title, list, folderColor }) => (
               <li key={id} className={styles["sidebar__navigation-item"]}>
                 <div
                   onClick={() => handleClickedTopic(id)}
                   className={styles["sidebar__navigation-item__header"]}
                 >
                   <IoIosArrowDown
-                    style={{ rotate: !clickedMenu[id] ? "-90deg" : "0deg" }}
+                    style={{ rotate: !expendedMenus[id] ? "-90deg" : "0deg" }}
                   />
                   <FaFolderClosed style={{ color: `var(${folderColor})` }} />
                   {title}
                 </div>
-                {clickedMenu[id] && (
-                  <ul className={styles["sidebar__navigation-item__submenu"]}>
-                    {list.map(({ id, title }) => (
-                      <li
-                        key={id}
-                        className={
-                          styles["sidebar__navigation-item__submenu-item"]
-                        }
-                      >
-                        <BiSolidInfoCircle
-                          style={{
-                            color: "var(--sky-blue)",
-                          }}
-                        />
-                        {title}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <AnimatePresence>
+                  {expendedMenus[id] && (
+                    <m.ul
+                      {...accordionAnimation}
+                      className={styles["sidebar__navigation-item__submenu"]}
+                    >
+                      {list.map(({ id, title }) => (
+                        <li
+                          key={id}
+                          className={
+                            styles["sidebar__navigation-item__submenu-item"]
+                          }
+                          onClick={() => setShowDocument(title)}
+                        >
+                          <BiSolidInfoCircle
+                            style={{
+                              color: "var(--sky-blue)",
+                            }}
+                          />
+                          {title}
+                        </li>
+                      ))}
+                    </m.ul>
+                  )}
+                </AnimatePresence>
               </li>
             ))}
           </m.ul>
