@@ -11,7 +11,7 @@
     &-active {
       width: fit-content;
       overflow: hidden;
-      background-color: rgb(9, 29, 52);
+      background-color: var(--dark-purple);
 
       div {
         height: 3.3rem;
@@ -40,13 +40,60 @@
   }
 
   &__content {
-    display: flex;
-    gap: 2.5rem;
-    padding: 1rem 2rem 0rem 2.5rem;
-    white-space: nowrap;
     height: calc(100% - 3.5rem);
-    width: 100%;
-    overflow: auto;
+    display: flex;
+    background-color: var(--dark-purple);
+
+    &-visual {
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      &-sublist {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 0.5rem;
+        border: 1px solid var(--steel-blue);
+        padding: 2rem;
+        border-radius: 0.4rem;
+        background-color: var(--midnight-blue);
+        max-width: 450px;
+      }
+
+      &-subitem {
+        display: flex;
+        gap: 1rem;
+        justify-content: left;
+        align-items: center;
+
+        span {
+          margin-left: -0.5rem;
+        }
+      }
+    }
+
+    &-group {
+      display: flex;
+      gap: 2.5rem;
+      padding: 1rem 2rem 1rem 2.5rem;
+      white-space: nowrap;
+      width: 100%;
+      flex: 1;
+      overflow: auto;
+    }
+
+    div:nth-child(2) {
+      flex: 1;
+      border-left: 1px solid var(--steel-blue);
+    }
 
     &-numbers {
       display: flex;
@@ -68,7 +115,7 @@
       }
 
       span {
-        color: var(--green)
+        color: var(--green);
       }
     }
   }

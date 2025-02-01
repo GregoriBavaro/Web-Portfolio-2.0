@@ -1,5 +1,6 @@
 "use client";
 
+import { StaticImageData } from "next/image";
 import { AnimatePresence, motion as m } from "framer-motion";
 import { useSidebarMenu } from "../../../store/store";
 
@@ -34,12 +35,21 @@ const accordionAnimation = {
 };
 
 interface SidebarProps {
-  data: Array<{
+  data: {
     id: number;
     title: string;
     folderColor: string;
-    list: Array<{ id: number; title: string; text: string[] }>;
-  }>;
+    list: {
+      id: number;
+      title: string;
+      description: (string | any)[];
+      visualDescription?: {
+        id: number;
+        title: string;
+        list: Array<{ id: number; title: string; icon: StaticImageData }>;
+      }[];
+    }[];
+  }[];
 }
 
 const Sidebar = ({ data }: SidebarProps) => {

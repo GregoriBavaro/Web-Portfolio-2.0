@@ -4,6 +4,7 @@
   flex-direction: column;
   margin-top: auto;
   gap: 2rem;
+  color: var(--white);
 
   &__intro {
     display: flex;
@@ -33,7 +34,7 @@
       li:first-child {
         p {
           span:last-child {
-            color: var(--foreground);
+            color: var(--white);
           }
         }
       }

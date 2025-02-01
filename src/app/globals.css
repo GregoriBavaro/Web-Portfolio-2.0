@@ -14,7 +14,7 @@
   --red-orange: rgb(239, 83, 80);
   --amber: rgb(255, 202, 40);
   --purple: rgb(36, 67, 143);
-  --dark-purple: rgb(11, 31, 57);
+  --dark-purple: rgb(9, 29, 52);
   --deep-purple: rgb(126, 87, 194);
   --orchid-purple: rgb(171, 71, 188);
   --brown: rgb(192, 124, 118);
@@ -77,7 +77,8 @@ main {
 }
 
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 9px;
+  height: 9px;
 }
 
 ::-webkit-scrollbar-track {
@@ -85,8 +86,12 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--foreground);
+  background-color: rgba(150, 170, 189, 0.449);
   background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(150, 170, 189, 0.582);
 }
 
 @media (prefers-color-scheme: dark) {

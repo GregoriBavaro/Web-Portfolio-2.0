@@ -1,12 +1,32 @@
+import { StaticImageData } from "next/image";
+
+import html from "../assets/images/html.png";
+import css from "../assets/images/css.png";
+import framer from "../assets/images/framer.png";
+import git from "../assets/images/git.png";
+import github from "../assets/images/github.png";
+import js from "../assets/images/js.png";
+import next from "../assets/images/next.png";
+import react from "../assets/images/react.png";
+import redux from "../assets/images/redux.png";
+import sass from "../assets/images/sass.png";
+import typescript from "../assets/images/typescript.png";
+import zustand from "../assets/images/zustand.png";
+
 type MenuItem = {
   id: number;
   title: string;
   folderColor: string;
-  list: Array<{
+  list: {
     id: number;
     title: string;
-    text: any[];
-  }>;
+    description: any[];
+    visualDescription?: {
+      id: number;
+      title: string;
+      list: { id: number; title: string; icon: StaticImageData }[];
+    }[];
+  }[];
 };
 
 export const MENU_LIST: MenuItem[] = [
@@ -17,9 +37,8 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
-
         title: "summery.md",
-        text: [
+        description: [
           "/**",
           " * About Gregori Bavaro",
           <>
@@ -34,47 +53,12 @@ export const MENU_LIST: MenuItem[] = [
           " * digital experiences that are both visually appealing and highly functional.",
           " *",
           " * Over the years, I have worked on a variety of projects, from developing",
-          " * websites for digital services to building custom solutions for luxury",
-          " * restaurant brands. I have developed a keen eye for detail, ensuring that",
+          " * websites for digital services to building custom solutions for established",
+          " * brands and startups. I have developed a keen eye for detail, ensuring that",
           " * each project I work on is executed with the utmost precision and creativity.",
           " * I am deeply invested in creating seamless user interfaces and experiences",
           " * that are intuitive and accessible.",
           " *",
-          <>
-            * <span>My technical expertise includes:</span>
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>JAVASCRIPT:</span>{" "}
-            Crafting robust, scalable solutions for web applications.
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>REACT:</span>{" "}
-            Building interactive and stateful UI components with React.
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>NEXT.JS:</span>{" "}
-            Developing SEO-friendly, server-side rendered applications, with
-            Next.js.
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>TYPESCRIPT:</span>{" "}
-            Ensuring type safety and maintainability of complex applications.
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>SCSS & CSS:</span>{" "}
-            Writing clean, organized styles to ensure beautiful and responsive
-            designs.
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>FRAMER MOTION:</span>{" "}
-            Implementing smooth and engaging animations for modern web
-            applications.
-          </>,
-          <>
-            * <span style={{ color: "var(--red-orange)" }}>SEO:</span> Improving
-            website SEO with JSON-LD, sitemaps, and i18next for multi-language
-            support.
-          </>,
           " * I take pride in writing clean, maintainable code and following best practices",
           " * to ensure that every project I work on is future-proof and scalable. My",
           " * approach to web development is centered around the needs of the user,",
@@ -93,12 +77,49 @@ export const MENU_LIST: MenuItem[] = [
           " * that users will love.",
           " */",
         ],
+        visualDescription: [
+          {
+            id: 0,
+            title: "// Programming Languages",
+            list: [
+              { id: 0, title: "HTML", icon: html },
+              { id: 1, title: "JavaScript", icon: js },
+              { id: 2, title: "TypeScript", icon: typescript },
+            ],
+          },
+          {
+            id: 1,
+            title: "// Styling & UI",
+            list: [
+              { id: 0, title: "CSS", icon: css },
+              { id: 1, title: "Sass", icon: sass },
+            ],
+          },
+          {
+            id: 2,
+            title: "// Frameworks & Libraries",
+            list: [
+              { id: 0, title: "React", icon: react },
+              { id: 1, title: "Next.js", icon: next },
+              { id: 2, title: "Redux-toolkit", icon: redux },
+              { id: 3, title: "Zustand", icon: zustand },
+              { id: 4, title: "Framer-motion", icon: framer },
+            ],
+          },
+          {
+            id: 3,
+            title: "// Tools & Services",
+            list: [
+              { id: 10, title: "git", icon: git },
+              { id: 11, title: "github", icon: github },
+            ],
+          },
+        ],
       },
       {
         id: 1,
-
         title: "career-goals.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Career Goals:</span>
@@ -114,12 +135,12 @@ export const MENU_LIST: MenuItem[] = [
           " *   allow me to continuously improve and innovate.",
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 3,
-
         title: "fun-facts.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Fun Facts:</span>
@@ -137,6 +158,7 @@ export const MENU_LIST: MenuItem[] = [
           " *   reading, or exploring new activities.",
           " */",
         ],
+        visualDescription: [],
       },
     ],
   },
@@ -149,7 +171,7 @@ export const MENU_LIST: MenuItem[] = [
         id: 0,
 
         title: "certifications.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Certification: Academy for Programming</span>
@@ -217,11 +239,12 @@ export const MENU_LIST: MenuItem[] = [
           </>,
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 1,
         title: "high-school.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>High School Education - Private American School</span>
@@ -237,11 +260,12 @@ export const MENU_LIST: MenuItem[] = [
           " * developed a passion for learning that continues to this day.",
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 2,
         title: "university.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>University Education - Private American University</span>
@@ -257,6 +281,7 @@ export const MENU_LIST: MenuItem[] = [
           " * of knowledge that complemented my career in technology and development.",
           " */",
         ],
+        visualDescription: [],
       },
     ],
   },
@@ -267,9 +292,8 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
-
         title: "programming-languages.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Programming Languages and Technologies</span>
@@ -291,12 +315,12 @@ export const MENU_LIST: MenuItem[] = [
           " *   provide seamless, intuitive, and enjoyable user experiences.",
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 1,
-
         title: "spoken-languages.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Spoken Languages</span>
@@ -310,6 +334,7 @@ export const MENU_LIST: MenuItem[] = [
           " *   on where I move to work, to further broaden my communication skills.",
           " */",
         ],
+        visualDescription: [],
       },
     ],
   },
@@ -320,9 +345,8 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
-
         title: "web-development.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Web Development Interest</span>
@@ -344,11 +368,12 @@ export const MENU_LIST: MenuItem[] = [
           " * to projects that have a positive impact on users.",
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 1,
         title: "open-source-contributions.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Open Source Contribution: LearnHub.mk</span>
@@ -385,11 +410,12 @@ export const MENU_LIST: MenuItem[] = [
           </>,
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 3,
         title: "hobbies.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Hobbies and Interests</span>
@@ -417,6 +443,7 @@ export const MENU_LIST: MenuItem[] = [
           " * me to stay creative and motivated.",
           " */",
         ],
+        visualDescription: [],
       },
     ],
   },
@@ -428,7 +455,7 @@ export const MENU_LIST: MenuItem[] = [
       {
         id: 0,
         title: "freelance.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Freelance Work</span>
@@ -439,11 +466,12 @@ export const MENU_LIST: MenuItem[] = [
           " * deployment, and SEO optimization.",
           " */",
         ],
+        visualDescription: [],
       },
       {
         id: 1,
         title: "work.md",
-        text: [
+        description: [
           "/**",
           <>
             * <span>Work Experience</span>
@@ -454,6 +482,7 @@ export const MENU_LIST: MenuItem[] = [
           " * high performance, clean code, and a seamless user experience.",
           " */",
         ],
+        visualDescription: [],
       },
     ],
   },

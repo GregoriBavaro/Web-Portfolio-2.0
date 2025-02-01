@@ -58,7 +58,7 @@
       position: relative;
       flex-direction: column;
       gap: 0.3rem;
-      padding: 0.5rem 0rem 0rem 1.5rem;
+      padding: 0.5rem 0rem 0rem 2.5rem;
       overflow: hidden;
 
       &::after {
@@ -79,7 +79,7 @@
         cursor: pointer;
 
         svg {
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           color: var(--sky-blue);
         }
       }
