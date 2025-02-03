@@ -1,0 +1,33 @@
+.textContent {
+  display: flex;
+  gap: 2.5rem;
+  padding: 1rem 2rem 0 2.5rem;
+  white-space: nowrap;
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+
+  &__numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    li {
+      opacity: 0.5;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    a {
+      color: var(--red-orange);
+    }
+
+    span {
+      color: var(--green);
+    }
+  }
+}

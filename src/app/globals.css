@@ -10,6 +10,7 @@
   --bright-blue: rgb(30, 136, 229);
   --sky-blue: rgb(66, 165, 245);
   --react-blue: rgb(2, 136, 209);
+  --royal-blue: rgb(33, 66, 167);
   --orange: rgb(254, 165, 95);
   --red-orange: rgb(239, 83, 80);
   --amber: rgb(255, 202, 40);
@@ -92,6 +93,10 @@ main {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(150, 170, 189, 0.582);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--steel-blue)
 }
 
 @media (prefers-color-scheme: dark) {

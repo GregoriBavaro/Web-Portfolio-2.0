@@ -1,22 +1,26 @@
 import { create } from "zustand";
 
 interface SidebarMenu {
-  isOpen: boolean;
+  isPrimaryTab: boolean;
+  isSecondaryTab: boolean;
   expendedMenus: { [id: number]: boolean };
   showDocument: string;
-  setOpen: (isOpen: boolean) => void;
+  setPrimaryTab: (isOpen: boolean) => void;
+  setSecondaryTab: (isSecondaryTab: boolean) => void;
   toggleMenu: (id: number) => void;
   setShowDocument: (showDocument: string) => void;
 }
 
 export const useSidebarMenu = create<SidebarMenu>((set) => ({
-  isOpen: true,
+  isPrimaryTab: true,
+  isSecondaryTab: true,
   expendedMenus: { 0: true },
   showDocument: "",
-  setOpen: (isOpen: boolean) => set({ isOpen }),
+  setPrimaryTab: (isPrimaryTab: boolean) => set({ isPrimaryTab }),
   toggleMenu: (id: number) =>
     set((state) => ({
       expendedMenus: { ...state.expendedMenus, [id]: !state.expendedMenus[id] },
     })),
+  setSecondaryTab: (isSecondaryTab: boolean) => set({ isSecondaryTab }),
   setShowDocument: (showDocument: string) => set({ showDocument }),
 }));

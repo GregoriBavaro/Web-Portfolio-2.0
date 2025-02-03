@@ -1,0 +1,35 @@
+.currentTab {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--midnight-blue);
+
+  &__tab {
+    width: fit-content;
+    overflow: hidden;
+    background-color: var(--dark-purple);
+
+    div {
+      height: 3.3rem;
+      display: flex;
+      white-space: nowrap;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0 1rem;
+
+      span {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        height: 100%;
+      }
+    }
+  }
+  span:nth-child(2) {
+    display: flex;
+    height: 3.3rem;
+    border-bottom: 1px solid var(--steel-blue);
+    flex-grow: 1;
+  }
+}

@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import { ProgrammingLanguagesProps } from "../types/programming-languages.types";
 
 import html from "../assets/images/html.png";
 import css from "../assets/images/css.png";
@@ -20,12 +20,8 @@ type MenuItem = {
   list: {
     id: number;
     title: string;
-    description: any[];
-    visualDescription?: {
-      id: number;
-      title: string;
-      list: { id: number; title: string; icon: StaticImageData }[];
-    }[];
+    text: (string | any)[];
+    programmingLanguages?: ProgrammingLanguagesProps[];
   }[];
 };
 
@@ -38,7 +34,7 @@ export const MENU_LIST: MenuItem[] = [
       {
         id: 0,
         title: "summery.md",
-        description: [
+        text: [
           "/**",
           " * About Gregori Bavaro",
           <>
@@ -76,11 +72,12 @@ export const MENU_LIST: MenuItem[] = [
           " * about the possibility of turning ideas into fully-fledged digital products",
           " * that users will love.",
           " */",
+          " ",
         ],
-        visualDescription: [
+        programmingLanguages: [
           {
             id: 0,
-            title: "// Programming Languages",
+            title: "// Programming Languages I've Worked With",
             list: [
               { id: 0, title: "HTML", icon: html },
               { id: 1, title: "JavaScript", icon: js },
@@ -119,7 +116,7 @@ export const MENU_LIST: MenuItem[] = [
       {
         id: 1,
         title: "career-goals.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Career Goals:</span>
@@ -134,13 +131,13 @@ export const MENU_LIST: MenuItem[] = [
           " * - I look forward to working on larger, more challenging projects that",
           " *   allow me to continuously improve and innovate.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
       {
         id: 3,
         title: "fun-facts.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Fun Facts:</span>
@@ -157,8 +154,8 @@ export const MENU_LIST: MenuItem[] = [
           " * - I’m constantly learning new things, whether it’s through courses,",
           " *   reading, or exploring new activities.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
     ],
   },
@@ -169,9 +166,8 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
-
         title: "certifications.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Certification: Academy for Programming</span>
@@ -238,13 +234,13 @@ export const MENU_LIST: MenuItem[] = [
             </a>
           </>,
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
       {
         id: 1,
         title: "high-school.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>High School Education - Private American School</span>
@@ -259,13 +255,13 @@ export const MENU_LIST: MenuItem[] = [
           " * The American education system provided me with a broader perspective, and I",
           " * developed a passion for learning that continues to this day.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
       {
         id: 2,
         title: "university.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>University Education - Private American University</span>
@@ -280,20 +276,20 @@ export const MENU_LIST: MenuItem[] = [
           " * understanding of global affairs and international business, providing a unique blend",
           " * of knowledge that complemented my career in technology and development.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
     ],
   },
   {
     id: 2,
-    title: "languages",
+    title: "skills",
     folderColor: "--amber",
     list: [
       {
         id: 0,
         title: "programming-languages.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Programming Languages and Technologies</span>
@@ -314,13 +310,51 @@ export const MENU_LIST: MenuItem[] = [
           " * - UX/UI: I pay great attention to UX/UI design, always ensuring that my web applications",
           " *   provide seamless, intuitive, and enjoyable user experiences.",
           " */",
+          " ",
         ],
-        visualDescription: [],
+        programmingLanguages: [
+          {
+            id: 0,
+            title: "// Programming Languages I've Worked With",
+            list: [
+              { id: 0, title: "HTML", icon: html },
+              { id: 1, title: "JavaScript", icon: js },
+              { id: 2, title: "TypeScript", icon: typescript },
+            ],
+          },
+          {
+            id: 1,
+            title: "// Styling & UI",
+            list: [
+              { id: 0, title: "CSS", icon: css },
+              { id: 1, title: "Sass", icon: sass },
+            ],
+          },
+          {
+            id: 2,
+            title: "// Frameworks & Libraries",
+            list: [
+              { id: 0, title: "React", icon: react },
+              { id: 1, title: "Next.js", icon: next },
+              { id: 2, title: "Redux-toolkit", icon: redux },
+              { id: 3, title: "Zustand", icon: zustand },
+              { id: 4, title: "Framer-motion", icon: framer },
+            ],
+          },
+          {
+            id: 3,
+            title: "// Tools & Services",
+            list: [
+              { id: 10, title: "git", icon: git },
+              { id: 11, title: "github", icon: github },
+            ],
+          },
+        ],
       },
       {
         id: 1,
         title: "spoken-languages.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Spoken Languages</span>
@@ -333,8 +367,8 @@ export const MENU_LIST: MenuItem[] = [
           " * - FUTURE PLANS: I am also eager to learn other languages in the future, depending",
           " *   on where I move to work, to further broaden my communication skills.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
     ],
   },
@@ -346,7 +380,7 @@ export const MENU_LIST: MenuItem[] = [
       {
         id: 0,
         title: "web-development.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Web Development Interest</span>
@@ -367,13 +401,13 @@ export const MENU_LIST: MenuItem[] = [
           " * passion for web development. I look forward to continuing to grow in this field and contributing",
           " * to projects that have a positive impact on users.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
       {
         id: 1,
         title: "open-source-contributions.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Open Source Contribution: LearnHub.mk</span>
@@ -409,13 +443,13 @@ export const MENU_LIST: MenuItem[] = [
             </a>
           </>,
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
       {
         id: 3,
         title: "hobbies.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Hobbies and Interests</span>
@@ -442,8 +476,8 @@ export const MENU_LIST: MenuItem[] = [
           " * into my work and life. Whether it's capturing a beautiful shot or exploring a new game or movie, my hobbies help",
           " * me to stay creative and motivated.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
     ],
   },
@@ -455,7 +489,7 @@ export const MENU_LIST: MenuItem[] = [
       {
         id: 0,
         title: "freelance.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Freelance Work</span>
@@ -465,13 +499,13 @@ export const MENU_LIST: MenuItem[] = [
           " * web applications from the ground up, covering design, UX/UI, coding,",
           " * deployment, and SEO optimization.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
       {
         id: 1,
         title: "work.md",
-        description: [
+        text: [
           "/**",
           <>
             * <span>Work Experience</span>
@@ -481,8 +515,8 @@ export const MENU_LIST: MenuItem[] = [
           " * following industry standards. My role involved ensuring",
           " * high performance, clean code, and a seamless user experience.",
           " */",
+          " ",
         ],
-        visualDescription: [],
       },
     ],
   },

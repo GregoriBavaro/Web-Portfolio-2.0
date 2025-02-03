@@ -1,0 +1,39 @@
+.secondaryMenu {
+  &__header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 3rem 0 1rem;
+    border-bottom: 1px solid var(--steel-blue);
+    border-top: 1px solid var(--steel-blue);
+    height: 3.3rem;
+    color: var(--white);
+
+    span {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__navigation {
+    overflow: hidden;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      padding: 1rem 0 1rem 1rem;
+
+      span:hover {
+        color: var(--white) !important;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

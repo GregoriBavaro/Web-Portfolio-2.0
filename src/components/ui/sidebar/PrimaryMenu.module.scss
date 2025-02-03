@@ -1,22 +1,4 @@
-.sidebar {
-  user-select: none;
-  border-right: 1px solid var(--steel-blue);
-  min-width: 304.46px;
-  background-color: var(--midnight-blue);
-
-  a {
-    color: var(--green);
-
-    span {
-      font-size: 0.9rem;
-    }
-  }
-
-  svg {
-    font-size: 1.3rem;
-    transition: 0.18s ease-in-out;
-  }
-
+.primaryMenu {
   &__header {
     display: flex;
     gap: 0.5rem;
@@ -87,5 +69,9 @@
         }
       }
     }
+  }
+  svg {
+    font-size: 1.3rem;
+    transition: 0.18s ease-in-out;
   }
 }
