@@ -3,11 +3,11 @@
 import { AnimatePresence, motion as m } from "framer-motion";
 import { useSidebarMenu } from "../../../store/store";
 
+import ToggleMenu from "./ToggleMenu";
 import { accordionAnimation } from "../../../utils/AccordionAnimation";
 
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 
 import styles from "./SecondaryMenu.module.scss";
 
@@ -16,19 +16,15 @@ const SecondaryTab = () => {
 
   return (
     <div className={styles.secondaryMenu}>
-      <div
-        className={styles.secondaryMenu__header}
-        onClick={() =>
+      <ToggleMenu
+        setTab={() =>
           useSidebarMenu.setState((state) => ({
             isSecondaryTab: !state.isSecondaryTab,
           }))
         }
-      >
-        <IoIosArrowDown
-          style={{ rotate: !isSecondaryTab ? "-90deg" : "0deg" }}
-        />
-        <span>contact</span>
-      </div>
+        menuName="contact"
+        isTabOpen={isSecondaryTab}
+      />
       <AnimatePresence>
         {isSecondaryTab && (
           <m.div

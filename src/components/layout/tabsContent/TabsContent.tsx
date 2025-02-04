@@ -1,16 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect } from "react";
 import { useSidebarMenu } from "../../../store/store";
 
 import CurrentTab from "./CurrentTab";
 import TextContent from "./TextContent";
 import ProgrammingLanguagesContent from "./ProgrammingLanguagesContent";
+import TimelineContent from "./TimelineContent";
 
 import { AboutProps } from "../../../types/about.types";
-
-import { IoCheckboxSharp } from "react-icons/io5";
 
 import styles from "./TabsContent.module.scss";
 
@@ -35,11 +33,16 @@ const TabsContent = ({ data }: AboutProps) => {
       <CurrentTab />
       <div className={styles.tabsContent__content}>
         <TextContent text={description?.text} />
-        {(description?.programmingLanguages ?? []).length > 0 && (
-          <ProgrammingLanguagesContent
-            data={description?.programmingLanguages}
-          />
-        )}
+        {Array.isArray(description?.programmingLanguages) &&
+          description.programmingLanguages.length > 0 && (
+            <ProgrammingLanguagesContent
+              data={description?.programmingLanguages}
+            />
+          )}
+        {Array.isArray(description?.timeline) &&
+          description.timeline.length > 0 && (
+            <TimelineContent data={description.timeline} />
+          )}
       </div>
     </section>
   );

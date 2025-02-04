@@ -1,20 +1,4 @@
 .primaryMenu {
-  &__header {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    cursor: pointer;
-    padding: 0 3rem 0 1rem;
-    border-bottom: 1px solid var(--steel-blue);
-    height: 3.3rem;
-    color: var(--white);
-
-    span {
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-  }
-
   &__navigation {
     overflow: hidden;
 
@@ -23,6 +7,7 @@
       flex-direction: column;
       gap: 0.7rem;
       padding: 1rem 0 1rem 1rem;
+      border-bottom: 1px solid var(--steel-blue);
 
       span:hover {
         color: var(--white) !important;
@@ -39,12 +24,15 @@
     }
 
     &__submenu {
-      display: flex;
       position: relative;
-      flex-direction: column;
-      gap: 0.3rem;
-      padding: 0.5rem 0rem 0rem 2.5rem;
       overflow: hidden;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 0rem 0rem 2.5rem;
+      }
 
       &::after {
         content: "";
@@ -70,6 +58,7 @@
       }
     }
   }
+
   svg {
     font-size: 1.3rem;
     transition: 0.18s ease-in-out;

@@ -1,4 +1,5 @@
 import { ProgrammingLanguagesProps } from "../types/programming-languages.types";
+import { TimelineProps } from "../types/timeline.types";
 
 import html from "../assets/images/html.png";
 import css from "../assets/images/css.png";
@@ -12,6 +13,7 @@ import redux from "../assets/images/redux.png";
 import sass from "../assets/images/sass.png";
 import typescript from "../assets/images/typescript.png";
 import zustand from "../assets/images/zustand.png";
+import csharp from "../assets/images/c-sharp.png";
 
 type MenuItem = {
   id: number;
@@ -22,6 +24,7 @@ type MenuItem = {
     title: string;
     text: (string | any)[];
     programmingLanguages?: ProgrammingLanguagesProps[];
+    timeline?: TimelineProps[];
   }[];
 };
 
@@ -82,6 +85,7 @@ export const MENU_LIST: MenuItem[] = [
               { id: 0, title: "HTML", icon: html },
               { id: 1, title: "JavaScript", icon: js },
               { id: 2, title: "TypeScript", icon: typescript },
+              { id: 3, title: "C#", icon: csharp },
             ],
           },
           {
@@ -488,34 +492,172 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
-        title: "freelance.md",
+        title: "experience.md",
         text: [
           "/**",
           <>
-            * <span>Freelance Work</span>
+            * <span>My experience</span>
           </>,
-          " * I have worked on multiple projects for companies,",
-          " * small businesses, and startups in Macedonia. Many times, I built",
-          " * web applications from the ground up, covering design, UX/UI, coding,",
-          " * deployment, and SEO optimization.",
+          " * I have worked on multiple projects for companies, small businesses,",
+          " * and startups in Macedonia. I have built web applications from the",
+          " * ground up, handling design, UX/UI, development, deployment, and SEO.",
+          " *",
+          " * In addition to independent development, I have collaborated with teams",
+          " * of developers, designers, product owners, and senior engineers.",
+          " * At LearnHub, a learning platform, I worked alongside a large group",
+          " * of developers, following industry standards.",
+          " *",
+          " * During this experience, I received mentorship and guidance from senior",
+          " * developers, improving my skills in clean code practices, performance",
+          " * optimization, and seamless user experience. We worked in agile sprints,",
+          " * maintained high-quality code with ESLint, and followed best practices",
+          " * for scalable web development.",
           " */",
           " ",
         ],
-      },
-      {
-        id: 1,
-        title: "work.md",
-        text: [
-          "/**",
-          <>
-            * <span>Work Experience</span>
-          </>,
-          " * I have experience working with a large group of developers at LearnHub,",
-          " * a learning platform where I developed the platform itself",
-          " * following industry standards. My role involved ensuring",
-          " * high performance, clean code, and a seamless user experience.",
-          " */",
-          " ",
+        timeline: [
+          {
+            id: 0,
+            title: "Seavus Education & Development Center",
+            subtitle: "Successfully graduated at the Academy for Programming",
+            time: "2021 - 2022",
+            href: "https://drive.google.com/file/d/1J2lGBnBYfPgUQE9iDO-NZgC5JX-01cKE/view",
+            list: [
+              "SASS",
+              "React.js",
+              "JavaScript",
+              "SQL",
+              "HTML",
+              "ASP.NET MVC",
+              "ASP.NET Web API",
+              "CSS",
+              "C#",
+            ],
+          },
+          {
+            id: 1,
+            title: "Seavus Education & Development Center",
+            subtitle: "CPD Certificate",
+            time: "2021 - 2022",
+            href: "https://drive.google.com/file/d/1C6sSNLb15b880gV0TzWGSZ_w2x9yLPQJ/view",
+            list: [
+              "SASS",
+              "React.js",
+              "JavaScript",
+              "SQL",
+              "HTML",
+              "ASP.NET MVC",
+              "ASP.NET Web API",
+              "CSS",
+              "C#",
+            ],
+          },
+          {
+            id: 2,
+            title: "JavaScript Course",
+            subtitle: "The Complete JavaScript Course: From Zero to Expert!",
+            time: "2022 - 2022",
+            href: "https://www.udemy.com/certificate/UC-5343c92f-4979-4070-90c9-46bac4f45164/",
+            list: ["JavaScript", "HTML", "CSS", "Asynchronous JS", "DOM", "OOP"],
+          },
+          {
+            id: 3,
+            title: "Productivity App",
+            subtitle: "Developed a productivity app",
+            time: "2022 - 2022",
+            href: "https://github.com/GregoriBavaro/Productivity-App",
+            list: ["HTML", "JavaScript", "CSS"],
+          },
+          {
+            id: 4,
+            title: "React Course",
+            subtitle:
+              "React - The Complete Guide (incl Hooks, React Router, Redux)",
+            time: "2022 - 2022",
+            href: "https://www.udemy.com/certificate/UC-f9c184ce-01aa-490f-a59c-037aabbd35ba/",
+            list: ["React.js", "Redux", "Next.js", "React Router"],
+          },
+          {
+            id: 5,
+            title: "Web Portfolio",
+            subtitle: "Developed my first web portfolio",
+            time: "2022 - 2022",
+            href: "https://portfolio-wb56.vercel.app/",
+            list: ["React.js", "Framer Motion", "Spline", "CSS"],
+          },
+          {
+            id: 6,
+            title: "Binary Brigade",
+            subtitle: "Solo project",
+            time: "2023 - 2023",
+            href: "https://team-web-portfolio-gregoribavaro.vercel.app/",
+            list: ["React.js", "JavaScript", "Framer Motion", "CSS", "TypeScript"],
+          },
+          {
+            id: 7,
+            title: "MM9 Machinery",
+            subtitle: "Solo Freelance project for a business.",
+            time: "2023 - 2023",
+            href: "https://mm-9-machinery.vercel.app/",
+            list: ["React.js", "JavaScript", "i18next", "EmailJS", "CSS"],
+          },
+          {
+            id: 8,
+            title: "Sienna",
+            subtitle: "Solo Freelance project for a startup.",
+            time: "2024 - 2024",
+            href: "https://www.sienna.mk/",
+            list: [
+              "React.js",
+              "JavaScript",
+              "Framer Motion",
+              "i18next",
+              "CSS",
+              "EmailJS",
+              "SEO",
+              "UX/UI",
+            ],
+          },
+          {
+            id: 9,
+            title: "LearnHub",
+            subtitle: "Frontend Developer",
+            time: "2024 - 2024",
+            href: "https://learnhub.mk/",
+            list: ["Next.js", "JavaScript", "SASS"],
+          },
+          {
+            id: 10,
+            title: "Catalyst",
+            subtitle: "Solo Freelance project for a startup.",
+            time: "2024 - 2025",
+            href: "https://www.catalyst.mk/",
+            list: [
+              "Next.js",
+              "React",
+              "JavaScript",
+              "SEO",
+              "EmailJS",
+              "SASS",
+              "UX/UI",
+            ],
+          },
+          {
+            id: 11,
+            title: "Web Portfolio 2.0",
+            subtitle: "Developed my new portfolio",
+            time: "2025 - 2025",
+            href: "https://www.catalyst.mk/",
+            list: [
+              "Next.js",
+              "React",
+              "JavaScript",
+              "SEO",
+              "EmailJS",
+              "SASS",
+              "UX/UI",
+            ],
+          },
         ],
       },
     ],

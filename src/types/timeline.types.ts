@@ -1,7 +1,9 @@
 export interface TimelineProps {
-  id: string;
-  titles: string;
+  id: number;
+  title: string;
   subtitle: string;
   time: string;
+  href: string;
   list: string[];
-}[];
+}
+

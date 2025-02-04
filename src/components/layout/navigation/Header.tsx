@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import TransitionLink from "../../../utils/TransitionLink";
 
 import styles from "./Header.module.scss";
@@ -10,6 +13,7 @@ const PATHS = [
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   return (
     <header className={styles.header}>
       <div className={styles.header__name}>
@@ -18,9 +22,9 @@ const Header = () => {
       <nav className={styles.header__navigation}>
         <ul>
           {PATHS.map(({ id, title, path }) => (
-            <TransitionLink key={id} href={path}>
-              {title}
-            </TransitionLink>
+            <li key={id} className={pathname === path ? styles.active : ""}>
+              <TransitionLink href={path}>{title}</TransitionLink>
+            </li>
           ))}
         </ul>
       </nav>

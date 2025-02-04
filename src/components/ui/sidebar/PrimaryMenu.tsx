@@ -1,7 +1,9 @@
-"use client"
+"use client";
 
 import { AnimatePresence, motion as m } from "framer-motion";
 import { useSidebarMenu } from "../../../store/store";
+
+import ToggleMenu from "./ToggleMenu";
 
 import { accordionAnimation } from "../../../utils/AccordionAnimation";
 
@@ -14,28 +16,34 @@ import { BiSolidInfoCircle } from "react-icons/bi";
 import styles from "./PrimaryMenu.module.scss";
 
 const PrimaryMenu = ({ data }: AboutProps) => {
-  const { isPrimaryTab, expendedMenus, toggleMenu, showDocument, setShowDocument } =
-    useSidebarMenu();
+  const {
+    isPrimaryTab,
+    expendedMenus,
+    toggleMenu,
+    showDocument,
+    setShowDocument,
+  } = useSidebarMenu();
 
   const handleClickedTopic = (id: number) => {
     toggleMenu(id);
   };
   return (
     <div className={styles.primaryMenu}>
-      <div
-        className={styles.primaryMenu__header}
-        onClick={() =>
+      <ToggleMenu
+        setTab={() =>
           useSidebarMenu.setState((state) => ({
             isPrimaryTab: !state.isPrimaryTab,
           }))
         }
-      >
-        <IoIosArrowDown style={{ rotate: !isPrimaryTab ? "-90deg" : "0deg" }} />
-        <span>personal-info</span>
-      </div>
+        menuName="personal-info"
+        isTabOpen={isPrimaryTab}
+      />
       <AnimatePresence>
         {isPrimaryTab && (
-          <m.div {...accordionAnimation} className={styles.primaryMenu__navigation}>
+          <m.div
+            {...accordionAnimation}
+            className={styles.primaryMenu__navigation}
+          >
             <ul className={styles["primaryMenu__navigation-list"]}>
               {data.map(({ id, title, list, folderColor }) => (
                 <li key={id} className={styles["primaryMenu__navigation-item"]}>
@@ -60,30 +68,36 @@ const PrimaryMenu = ({ data }: AboutProps) => {
                   <AnimatePresence>
                     {expendedMenus[id] && (
                       <m.ul
+                        className={
+                          styles["primaryMenu__navigation-item__submenu"]
+                        }
                         {...accordionAnimation}
-                        className={styles["primaryMenu__navigation-item__submenu"]}
                       >
-                        {list.map(({ id, title }) => (
-                          <li
-                            key={id}
-                            className={
-                              styles["primaryMenu__navigation-item__submenu-item"]
-                            }
-                            onClick={() => setShowDocument(title)}
-                          >
-                            <BiSolidInfoCircle />
-                            <span
-                              style={{
-                                color:
-                                  title === showDocument
-                                    ? "var(--white)"
-                                    : "var(--foreground)",
-                              }}
+                        <div>
+                          {list.map(({ id, title }) => (
+                            <li
+                              key={id}
+                              className={
+                                styles[
+                                  "primaryMenu__navigation-item__submenu-item"
+                                ]
+                              }
+                              onClick={() => setShowDocument(title)}
                             >
-                              {title}
-                            </span>
-                          </li>
-                        ))}
+                              <BiSolidInfoCircle />
+                              <span
+                                style={{
+                                  color:
+                                    title === showDocument
+                                      ? "var(--white)"
+                                      : "var(--foreground)",
+                                }}
+                              >
+                                {title}
+                              </span>
+                            </li>
+                          ))}
+                        </div>
                       </m.ul>
                     )}
                   </AnimatePresence>

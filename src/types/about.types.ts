@@ -1,4 +1,5 @@
 import { ProgrammingLanguagesProps } from "./programming-languages.types";
+import { TimelineProps } from "./timeline.types";
 
 export interface AboutProps {
   data: {
@@ -10,6 +11,7 @@ export interface AboutProps {
       title: string;
       text: (string | any)[];
       programmingLanguages?: ProgrammingLanguagesProps[];
+      timeline?: TimelineProps[];
     }[];
   }[];
 }
