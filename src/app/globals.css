@@ -13,6 +13,7 @@
   --royal-blue: rgb(33, 66, 167);
   --orange: rgb(254, 165, 95);
   --red-orange: rgb(239, 83, 80);
+  --yellow: rgb(255, 223, 0);
   --amber: rgb(255, 202, 40);
   --purple: rgb(36, 67, 143);
   --dark-purple: rgb(9, 29, 52);
@@ -87,7 +88,7 @@ main {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(150, 170, 189, 0.449);
+  background-color: rgba(150, 170, 189, 0.109);
   background-clip: content-box;
 }
 

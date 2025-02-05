@@ -1,5 +1,5 @@
 .timelineContent {
-  padding: 1rem 2rem 1rem 2.5rem;
+  padding: 1rem 2rem 1rem 2rem;
   overflow: auto;
   border-left: 1px solid var(--steel-blue);
   flex: 1;
@@ -94,6 +94,7 @@
         margin-top: auto;
         color: var(--midnight-blue);
         border-radius: 0.1rem;
+        font-size: 0.8rem;
         transition: 0.1s linear;
 
         &:hover {

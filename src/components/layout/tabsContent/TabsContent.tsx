@@ -8,17 +8,20 @@ import TextContent from "./TextContent";
 import ProgrammingLanguagesContent from "./ProgrammingLanguagesContent";
 import TimelineContent from "./TimelineContent";
 
-import { AboutProps } from "../../../types/about.types";
+import { DataProps } from "../../../types/data.types";
 
 import styles from "./TabsContent.module.scss";
 
-const TabsContent = ({ data }: AboutProps) => {
-  const { setShowDocument, showDocument } = useSidebarMenu();
+const TabsContent = ({ data }: DataProps) => {
+  const { setShowDocument, showDocument, setDocumentIcon } = useSidebarMenu();
 
   useEffect(() => {
     const defaultShowDocument = data[0].list[0].title;
     setShowDocument(defaultShowDocument);
-  }, [data, setShowDocument]);
+
+    const defaultIcon = data[0].list[0].icon || <span />;
+    setDocumentIcon(defaultIcon)
+  }, [data, setShowDocument, setDocumentIcon]);
 
   const findInfoByTitle = (searchTitle: string) => {
     return data

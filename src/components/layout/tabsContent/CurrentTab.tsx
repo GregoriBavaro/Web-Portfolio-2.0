@@ -1,10 +1,6 @@
-import { usePathname } from "next/navigation";
 import { motion as m } from "framer-motion";
 
 import { useSidebarMenu } from "../../../store/store";
-
-import { BiSolidInfoCircle } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
 
 import styles from "./CurrentTab.module.scss";
 
@@ -19,20 +15,13 @@ const showTab = {
 };
 
 const CurrentTab = () => {
-  const { showDocument } = useSidebarMenu();
-  const pathname = usePathname();
+  const { showDocument, documentIcon } = useSidebarMenu();
 
-  const icon =
-    pathname === "/about" ? (
-      <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />
-    ) : (
-      <FaReact />
-    );
   return (
     <div className={styles.currentTab}>
       <m.div {...showTab} className={styles.currentTab__tab}>
         <div>
-          <span>{icon}</span>
+          <span>{documentIcon}</span>
           {showDocument}
         </div>
       </m.div>

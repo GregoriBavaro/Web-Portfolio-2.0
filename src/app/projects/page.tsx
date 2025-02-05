@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 
+import Sidebar from "../../components/ui/sidebar/Sidebar";
+import TabsContent from "../../components/layout/tabsContent/TabsContent";
+
+import { PROJECTS } from "../../db/projects/projects";
+
 export const metadata: Metadata = {
   title: "Projects | Gregori Bavaro's Web Development Portfolio",
   description:
@@ -7,7 +12,12 @@ export const metadata: Metadata = {
 };
 
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <>
+      <Sidebar data={PROJECTS} />
+      <TabsContent data={PROJECTS}/>
+    </>
+  );
 };
 
 export default Projects;

@@ -1,6 +1,8 @@
 import { ProgrammingLanguagesProps } from "../types/programming-languages.types";
 import { TimelineProps } from "../types/timeline.types";
 
+import { BiSolidInfoCircle } from "react-icons/bi";
+
 import html from "../assets/images/html.png";
 import css from "../assets/images/css.png";
 import framer from "../assets/images/framer.png";
@@ -21,8 +23,12 @@ type MenuItem = {
   folderColor: string;
   list: {
     id: number;
+    icon: any;
     title: string;
     text: (string | any)[];
+    code?: string;
+    website?: string;
+    photos?: string[];
     programmingLanguages?: ProgrammingLanguagesProps[];
     timeline?: TimelineProps[];
   }[];
@@ -36,6 +42,7 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "summery.md",
         text: [
           "/**",
@@ -119,6 +126,7 @@ export const MENU_LIST: MenuItem[] = [
       },
       {
         id: 1,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "career-goals.md",
         text: [
           "/**",
@@ -139,7 +147,8 @@ export const MENU_LIST: MenuItem[] = [
         ],
       },
       {
-        id: 3,
+        id: 2,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "fun-facts.md",
         text: [
           "/**",
@@ -170,6 +179,7 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "certifications.md",
         text: [
           "/**",
@@ -243,6 +253,7 @@ export const MENU_LIST: MenuItem[] = [
       },
       {
         id: 1,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "high-school.md",
         text: [
           "/**",
@@ -264,6 +275,7 @@ export const MENU_LIST: MenuItem[] = [
       },
       {
         id: 2,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "university.md",
         text: [
           "/**",
@@ -292,6 +304,7 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "programming-languages.md",
         text: [
           "/**",
@@ -357,6 +370,7 @@ export const MENU_LIST: MenuItem[] = [
       },
       {
         id: 1,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "spoken-languages.md",
         text: [
           "/**",
@@ -383,6 +397,7 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "web-development.md",
         text: [
           "/**",
@@ -410,6 +425,7 @@ export const MENU_LIST: MenuItem[] = [
       },
       {
         id: 1,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "open-source-contributions.md",
         text: [
           "/**",
@@ -452,6 +468,7 @@ export const MENU_LIST: MenuItem[] = [
       },
       {
         id: 3,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "hobbies.md",
         text: [
           "/**",
@@ -492,6 +509,7 @@ export const MENU_LIST: MenuItem[] = [
     list: [
       {
         id: 0,
+        icon: <BiSolidInfoCircle style={{ color: "var(--sky-blue)" }} />,
         title: "experience.md",
         text: [
           "/**",
@@ -537,7 +555,7 @@ export const MENU_LIST: MenuItem[] = [
           {
             id: 1,
             title: "Seavus Education & Development Center",
-            subtitle: "CPD Certificate",
+            subtitle: "Obtained a CPD Certificate",
             time: "2021 - 2022",
             href: "https://drive.google.com/file/d/1C6sSNLb15b880gV0TzWGSZ_w2x9yLPQJ/view",
             list: [
@@ -558,7 +576,14 @@ export const MENU_LIST: MenuItem[] = [
             subtitle: "The Complete JavaScript Course: From Zero to Expert!",
             time: "2022 - 2022",
             href: "https://www.udemy.com/certificate/UC-5343c92f-4979-4070-90c9-46bac4f45164/",
-            list: ["JavaScript", "HTML", "CSS", "Asynchronous JS", "DOM", "OOP"],
+            list: [
+              "JavaScript",
+              "HTML",
+              "CSS",
+              "Asynchronous JS",
+              "DOM",
+              "OOP",
+            ],
           },
           {
             id: 3,
@@ -591,7 +616,13 @@ export const MENU_LIST: MenuItem[] = [
             subtitle: "Solo project",
             time: "2023 - 2023",
             href: "https://team-web-portfolio-gregoribavaro.vercel.app/",
-            list: ["React.js", "JavaScript", "Framer Motion", "CSS", "TypeScript"],
+            list: [
+              "React.js",
+              "JavaScript",
+              "Framer Motion",
+              "CSS",
+              "TypeScript",
+            ],
           },
           {
             id: 7,

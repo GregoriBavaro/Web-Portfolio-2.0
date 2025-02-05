@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Sidebar from "../../components/ui/sidebar/Sidebar";
 import TabsContent from "../../components/layout/tabsContent/TabsContent";
 
+
+
 import { MENU_LIST } from "../../db/about";
 
 export const metadata: Metadata = {

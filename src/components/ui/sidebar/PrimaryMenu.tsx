@@ -7,26 +7,27 @@ import ToggleMenu from "./ToggleMenu";
 
 import { accordionAnimation } from "../../../utils/AccordionAnimation";
 
-import { AboutProps } from "../../../types/about.types";
+import { DataProps } from "../../../types/data.types";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { FaFolderClosed } from "react-icons/fa6";
-import { BiSolidInfoCircle } from "react-icons/bi";
 
 import styles from "./PrimaryMenu.module.scss";
 
-const PrimaryMenu = ({ data }: AboutProps) => {
+const PrimaryMenu = ({ data }: DataProps) => {
   const {
     isPrimaryTab,
     expendedMenus,
     toggleMenu,
     showDocument,
     setShowDocument,
+    setDocumentIcon,
   } = useSidebarMenu();
 
   const handleClickedTopic = (id: number) => {
     toggleMenu(id);
   };
+
   return (
     <div className={styles.primaryMenu}>
       <ToggleMenu
@@ -74,7 +75,7 @@ const PrimaryMenu = ({ data }: AboutProps) => {
                         {...accordionAnimation}
                       >
                         <div>
-                          {list.map(({ id, title }) => (
+                          {list.map(({ id, title, icon }) => (
                             <li
                               key={id}
                               className={
@@ -82,9 +83,12 @@ const PrimaryMenu = ({ data }: AboutProps) => {
                                   "primaryMenu__navigation-item__submenu-item"
                                 ]
                               }
-                              onClick={() => setShowDocument(title)}
+                              onClick={() => {
+                                setShowDocument(title);
+                                setDocumentIcon(icon || <span />);
+                              }}
                             >
-                              <BiSolidInfoCircle />
+                              {icon}
                               <span
                                 style={{
                                   color:
