@@ -11,6 +11,7 @@ import { DataProps } from "../../../types/data.types";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { FaFolderClosed } from "react-icons/fa6";
+import { FaFolderOpen } from "react-icons/fa6";
 
 import styles from "./PrimaryMenu.module.scss";
 
@@ -26,6 +27,14 @@ const PrimaryMenu = ({ data }: DataProps) => {
 
   const handleClickedTopic = (id: number) => {
     toggleMenu(id);
+  };
+
+  const handleFolderIcon = (id: number, folderColor: string) => {
+    return expendedMenus[id] ? (
+      <FaFolderOpen style={{ color: `var(${folderColor})`, fontSize:"1.4rem" }} />
+    ) : (
+      <FaFolderClosed style={{ color: `var(${folderColor})` }} />
+    );
   };
 
   return (
@@ -55,7 +64,7 @@ const PrimaryMenu = ({ data }: DataProps) => {
                     <IoIosArrowDown
                       style={{ rotate: !expendedMenus[id] ? "-90deg" : "0deg" }}
                     />
-                    <FaFolderClosed style={{ color: `var(${folderColor})` }} />
+                    {handleFolderIcon(id, folderColor)}
                     <span
                       style={{
                         color: expendedMenus[id]

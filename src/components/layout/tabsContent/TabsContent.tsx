@@ -22,6 +22,7 @@ const TabsContent = ({ data }: DataProps) => {
     documentIcon,
   } = useSidebarMenu();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (navigateFromDetails === "") {
       const defaultShowDocument = data[0]?.list[0]?.title;

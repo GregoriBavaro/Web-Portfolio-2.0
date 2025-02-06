@@ -45,7 +45,8 @@
       }
     ],
     "react/require-default-props": "off",
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "react-hooks/exhaustive-deps": "off"
   },
   "settings": {
     "react": {
