@@ -27,8 +27,8 @@ const Header = () => {
           ))}
           <li className={styles["header__navigation-cv"]}>
             <a
-              href="/gregori-bavaro-portfolio.pdf"
-              download="gregori-bavaro-portfolio.pdf"
+              href="/Gregori-Bavaro-Portfolio.pdf"
+              download="Gregori-Bavaro-Portfolio.pdf"
             >
               Download Portfolio
             </a>
