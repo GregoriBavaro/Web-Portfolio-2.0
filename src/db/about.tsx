@@ -2,6 +2,8 @@ import { ProgrammingLanguagesProps } from "../types/programming-languages.types"
 import { TimelineProps } from "../types/timeline.types";
 
 import { BiSolidInfoCircle } from "react-icons/bi";
+import { FaReact } from "react-icons/fa";
+import { SiJavascript } from "react-icons/si";
 
 import html from "../assets/images/html.png";
 import css from "../assets/images/css.png";
@@ -23,7 +25,7 @@ type MenuItem = {
   folderColor: string;
   list: {
     id: number;
-    icon: any;
+    icon: React.ReactElement | null;
     title: string;
     text: (string | any)[];
     code?: string;
@@ -459,7 +461,7 @@ export const MENU_LIST: MenuItem[] = [
               href="https://learnhub.mk"
             >
               {" "}
-              LearnHub.mk
+              [LearnHub.mk]
             </a>
           </>,
           " */",
@@ -536,6 +538,7 @@ export const MENU_LIST: MenuItem[] = [
         timeline: [
           {
             id: 0,
+            icon: null,
             title: "Seavus Education & Development Center",
             subtitle: "Successfully graduated at the Academy for Programming",
             time: "2021 - 2022",
@@ -554,6 +557,7 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 1,
+            icon: null,
             title: "Seavus Education & Development Center",
             subtitle: "Obtained a CPD Certificate",
             time: "2021 - 2022",
@@ -572,6 +576,7 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 2,
+            icon: null,
             title: "JavaScript Course",
             subtitle: "The Complete JavaScript Course: From Zero to Expert!",
             time: "2022 - 2022",
@@ -587,14 +592,21 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 3,
+            icon: (
+              <SiJavascript
+                style={{ color: "var(--yellow)", fontSize: "1.15rem" }}
+              />
+            ),
             title: "Productivity App",
             subtitle: "Developed a productivity app",
             time: "2022 - 2022",
-            href: "https://github.com/GregoriBavaro/Productivity-App",
+            href: "/projects",
+            showDocument: "productivity-app.js",
             list: ["HTML", "JavaScript", "CSS"],
           },
           {
             id: 4,
+            icon: null,
             title: "React Course",
             subtitle:
               "React - The Complete Guide (incl Hooks, React Router, Redux)",
@@ -604,18 +616,22 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 5,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "Web Portfolio",
             subtitle: "Developed my first web portfolio",
             time: "2022 - 2022",
-            href: "https://portfolio-wb56.vercel.app/",
+            href: "/projects",
+            showDocument: "web-portfolio.jsx",
             list: ["React.js", "Framer Motion", "Spline", "CSS"],
           },
           {
             id: 6,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "Binary Brigade",
             subtitle: "Solo project",
             time: "2023 - 2023",
-            href: "https://team-web-portfolio-gregoribavaro.vercel.app/",
+            href: "/projects",
+            showDocument: "binary-brigade.tsx",
             list: [
               "React.js",
               "JavaScript",
@@ -626,18 +642,22 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 7,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "MM9 Machinery",
             subtitle: "Solo Freelance project for a business.",
             time: "2023 - 2023",
-            href: "https://mm-9-machinery.vercel.app/",
+            href: "/projects",
+            showDocument: "mm9-machinery.jsx",
             list: ["React.js", "JavaScript", "i18next", "EmailJS", "CSS"],
           },
           {
             id: 8,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "Sienna",
             subtitle: "Solo Freelance project for a startup.",
-            time: "2024 - 2024",
-            href: "https://www.sienna.mk/",
+            time: "2023 - 2024",
+            href: "/projects",
+            showDocument: "sienna.jsx",
             list: [
               "React.js",
               "JavaScript",
@@ -651,18 +671,22 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 9,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "LearnHub",
             subtitle: "Frontend Developer",
             time: "2024 - 2024",
-            href: "https://learnhub.mk/",
+            href: "/projects",
+            showDocument: "learn-hub.tsx",
             list: ["Next.js", "JavaScript", "SASS"],
           },
           {
             id: 10,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "Catalyst",
             subtitle: "Solo Freelance project for a startup.",
             time: "2024 - 2025",
-            href: "https://www.catalyst.mk/",
+            href: "/projects",
+            showDocument: "catalyst.tsx",
             list: [
               "Next.js",
               "React",
@@ -675,10 +699,12 @@ export const MENU_LIST: MenuItem[] = [
           },
           {
             id: 11,
+            icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
             title: "Web Portfolio 2.0",
             subtitle: "Developed my new portfolio",
             time: "2025 - 2025",
-            href: "https://www.catalyst.mk/",
+            href: "/projects",
+            showDocument: "web-portfolio-2.0.tsx",
             list: [
               "Next.js",
               "React",

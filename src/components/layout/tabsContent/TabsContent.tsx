@@ -13,14 +13,28 @@ import { DataProps } from "../../../types/data.types";
 import styles from "./TabsContent.module.scss";
 
 const TabsContent = ({ data }: DataProps) => {
-  const { setShowDocument, showDocument, setDocumentIcon } = useSidebarMenu();
+  const {
+    setShowDocument,
+    showDocument,
+    setDocumentIcon,
+    navigateFromDetails,
+    setNavigateFromDetails,
+    documentIcon,
+  } = useSidebarMenu();
 
   useEffect(() => {
-    const defaultShowDocument = data[0].list[0].title;
-    setShowDocument(defaultShowDocument);
+    if (navigateFromDetails === "") {
+      const defaultShowDocument = data[0]?.list[0]?.title;
+      setShowDocument(defaultShowDocument);
 
-    const defaultIcon = data[0].list[0].icon || <span />;
-    setDocumentIcon(defaultIcon)
+      const defaultIcon = data[0].list[0].icon || <span />;
+      setDocumentIcon(defaultIcon);
+    } else {
+      setShowDocument(navigateFromDetails);
+      setDocumentIcon(documentIcon || <span />);
+    }
+
+    setNavigateFromDetails("");
   }, [data, setShowDocument, setDocumentIcon]);
 
   const findInfoByTitle = (searchTitle: string) => {

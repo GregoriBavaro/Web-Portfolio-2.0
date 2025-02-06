@@ -9,7 +9,6 @@ const PATHS = [
   { id: 0, title: "_hello", path: "/" },
   { id: 1, title: "_about-me", path: "/about" },
   { id: 2, title: "_projects", path: "/projects" },
-  { id: 3, title: "_contact-me", path: "/contact" },
 ];
 
 const Header = () => {
@@ -26,6 +25,14 @@ const Header = () => {
               <TransitionLink href={path}>{title}</TransitionLink>
             </li>
           ))}
+          <li className={styles["header__navigation-cv"]}>
+            <a
+              href="/Gregori-Bavaro-Portfolio.pdf"
+              download="Gregori-Bavaro-Portfolio.pdf"
+            >
+              Download Portfolio
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
