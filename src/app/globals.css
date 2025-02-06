@@ -97,7 +97,7 @@ main {
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: var(--steel-blue)
+  background-color: var(--steel-blue);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,15 +1,23 @@
 .hero {
-  padding: 0 0 5rem 20%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: auto;
-  gap: 2rem;
   color: var(--white);
+  width: 100%;
+  height: 100%;
+
+  &__line {
+    width: 304.46px;
+    border-right: 1px solid var(--steel-blue);
+    background-color: var(--midnight-blue);
+  }
 
   &__intro {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    margin-top: auto;
+    padding: 0 0 4rem 4rem;
 
     h1 {
       font-size: 4rem;
@@ -23,44 +31,44 @@
       font-weight: 100;
       color: var(--royal-blue);
     }
-  }
 
-  &__info {
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-
-      li:first-child {
-        p {
-          span:last-child {
-            color: var(--white);
-          }
-        }
-      }
-
-      li {
+    &-info {
+      ul {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1.5rem;
 
-        h5 {
-          color: var(--steel-blue);
+        li:first-child {
+          p {
+            span:last-child {
+              color: var(--white);
+            }
+          }
         }
 
-        p {
+        li {
           display: flex;
-          gap: 0.7rem;
-          span:first-child {
-            color: var(--royal-blue);
+          flex-direction: column;
+          gap: 0.5rem;
+
+          h5 {
+            color: var(--steel-blue);
           }
 
-          span:nth-of-type(2) {
-            color: var(--green);
-          }
+          p {
+            display: flex;
+            gap: 0.7rem;
+            span:first-child {
+              color: var(--royal-blue);
+            }
 
-          span:last-child {
-            color: var(--brown);
+            span:nth-of-type(2) {
+              color: var(--green);
+            }
+
+            span:last-child {
+              color: var(--brown);
+            }
           }
         }
       }
