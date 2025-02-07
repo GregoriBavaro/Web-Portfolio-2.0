@@ -1,3 +1,5 @@
+import SecondaryTab from "../../../components/ui/sidebar/SecondaryMenu";
+
 import { IoIosArrowForward } from "react-icons/io";
 
 import styles from "./Hero.module.scss";
@@ -7,7 +9,7 @@ import { INFORMATION } from "../../../db/hero";
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.hero__line}></div>
+      <div className={styles.hero__line}><SecondaryTab /></div>
       <div className={styles.hero__intro}>
         <div>
           <span>Hello, I am</span>

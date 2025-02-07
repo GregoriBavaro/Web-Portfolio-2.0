@@ -7,6 +7,11 @@
   border-bottom: 1px solid var(--steel-blue);
   height: 3.3rem;
   color: var(--white);
+  user-select: none;
+
+  svg {
+    transition: 0.18s ease-in-out;
+  }
 
   span {
     font-weight: 600;

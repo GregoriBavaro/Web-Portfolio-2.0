@@ -1,8 +1,9 @@
 .sidebar {
   user-select: none;
   border-right: 1px solid var(--steel-blue);
-  min-width: 304.46px;
   background-color: var(--midnight-blue);
+  min-width: 304.46px;
+  overflow: auto;
 
   a {
     color: var(--green);
