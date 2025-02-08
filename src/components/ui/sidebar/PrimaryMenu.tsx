@@ -31,7 +31,7 @@ const PrimaryMenu = ({ data }: DataProps) => {
 
   const handleFolderIcon = (id: number, folderColor: string) => {
     return expendedMenus[id] ? (
-      <FaFolderOpen style={{ color: `var(${folderColor})`, fontSize:"1.4rem" }} />
+      <FaFolderOpen style={{ color: `var(${folderColor})` }} />
     ) : (
       <FaFolderClosed style={{ color: `var(${folderColor})` }} />
     );

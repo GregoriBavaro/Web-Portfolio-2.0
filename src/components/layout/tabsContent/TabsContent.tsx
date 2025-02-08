@@ -7,6 +7,7 @@ import CurrentTab from "./CurrentTab";
 import TextContent from "./TextContent";
 import ProgrammingLanguagesContent from "./ProgrammingLanguagesContent";
 import TimelineContent from "./TimelineContent";
+import GalleryContent from "./GalleryContent";
 
 import { DataProps } from "../../../types/data.types";
 
@@ -61,6 +62,9 @@ const TabsContent = ({ data }: DataProps) => {
           description.timeline.length > 0 && (
             <TimelineContent data={description.timeline} />
           )}
+        {Array.isArray(description?.mocks) && description.mocks.length > 0 && (
+          <GalleryContent mocks={description.mocks || []} />
+        )}
       </div>
     </section>
   );

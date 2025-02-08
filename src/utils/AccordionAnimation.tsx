@@ -6,7 +6,7 @@ export const accordionAnimation = {
     height: "auto",
     transition: {
       height: {
-        duration: 0.15,
+        duration: 0.2,
       },
       ease: "linear",
     },
@@ -15,9 +15,10 @@ export const accordionAnimation = {
     height: 0,
     transition: {
       height: {
-        duration: 0.15,
+        duration: 0.2,
       },
       ease: "linear",
     },
   },
+  layout: true,
 };

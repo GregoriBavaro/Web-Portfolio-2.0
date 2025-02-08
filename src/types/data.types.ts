@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 import { ProgrammingLanguagesProps } from "./programming-languages.types";
 import { TimelineProps } from "./timeline.types";
 
@@ -8,9 +10,12 @@ export interface DataProps {
     folderColor: string;
     list: {
       id: number;
-      icon: React.ReactElement | null;
       title: string;
+      icon: React.ReactElement | null;
       text: (string | any)[];
+      sourceCode?: string;
+      website?: string;
+      mocks?: StaticImageData[];
       programmingLanguages?: ProgrammingLanguagesProps[];
       timeline?: TimelineProps[];
     }[];

@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 import { ProgrammingLanguagesProps } from "../types/programming-languages.types";
 import { TimelineProps } from "../types/timeline.types";
 
@@ -28,9 +30,6 @@ type MenuItem = {
     icon: React.ReactElement | null;
     title: string;
     text: (string | any)[];
-    code?: string;
-    website?: string;
-    photos?: string[];
     programmingLanguages?: ProgrammingLanguagesProps[];
     timeline?: TimelineProps[];
   }[];
