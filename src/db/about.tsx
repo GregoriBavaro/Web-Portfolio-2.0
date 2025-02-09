@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 import { ProgrammingLanguagesProps } from "../types/programming-languages.types";
 import { TimelineProps } from "../types/timeline.types";
 

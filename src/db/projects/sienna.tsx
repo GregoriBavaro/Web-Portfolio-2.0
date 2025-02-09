@@ -11,7 +11,9 @@ import tablet3 from "../../assets/mocks/sienna/tablet/tablet (3).png";
 
 import mobile1 from "../../assets/mocks/sienna/mobile/mobile (1).png";
 import mobile2 from "../../assets/mocks/sienna/mobile/mobile (2).png";
-import mobile3 from "../../assets/mocks/sienna/mobile/mobile (3).png";
+import mobile3 from "../../assets/mocks/sienna/mobile/mobile (4).png";
+import mobile4 from "../../assets/mocks/sienna/mobile/mobile (5).png";
+import mobile5 from "../../assets/mocks/sienna/mobile/mobile (6).png";
 
 import { FaReact } from "react-icons/fa";
 
@@ -22,8 +24,10 @@ export const SIENNA = {
   website: "https://www.sienna.mk/",
   mocks: [
     mobile1,
+    mobile5,
     mobile2,
     mobile3,
+    mobile4,
     tablet1,
     tablet2,
     tablet3,

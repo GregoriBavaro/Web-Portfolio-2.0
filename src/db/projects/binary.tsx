@@ -1,12 +1,19 @@
 import { FaReact } from "react-icons/fa";
 
+import tablet1 from "../../assets/mocks/binary/tablet/tablet (1).png";
+import tablet2 from "../../assets/mocks/binary/tablet/tablet (2).png";
+
+import desktop1 from "../../assets/mocks/binary/desktop/desktop (1).png";
+import desktop2 from "../../assets/mocks/binary/desktop/desktop (2).png";
+import desktop3 from "../../assets/mocks/binary/desktop/desktop (3).png";
+
 export const BINARY = {
   id: 3,
   icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
   title: "binary-brigade.tsx",
   sourceCode: "https://github.com/GregoriBavaro/team-web-portfolio",
-  website: "https://team-web-portfolio-gregoribavaro.vercel.app/",
-  mocks: [],
+  website: "https://binary-brigade.vercel.app/",
+  mocks: [tablet1, tablet2, desktop1, desktop2, desktop3],
   text: [
     "/**",
     " * Project: Team Web Portfolio",
@@ -36,7 +43,7 @@ export const BINARY = {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://team-web-portfolio-gregoribavaro.vercel.app/"
+        href="https://binary-brigade.vercel.app/"
       >
         [Binary Brigade]
       </a>

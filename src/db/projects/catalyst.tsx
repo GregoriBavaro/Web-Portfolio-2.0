@@ -1,12 +1,34 @@
 import { FaReact } from "react-icons/fa";
 
+import mobile1 from "../../assets/mocks/catalyst/mobile/mobile (1).png";
+import mobile2 from "../../assets/mocks/catalyst/mobile/mobile (2).png";
+
+import tablet1 from "../../assets/mocks/catalyst/tablet/tablet (1).png";
+import tablet2 from "../../assets/mocks/catalyst/tablet/tablet (2).png";
+import tablet3 from "../../assets/mocks/catalyst/tablet/tablet (3).png";
+import tablet4 from "../../assets/mocks/catalyst/tablet/tablet (4).png";
+
+import desktop1 from "../../assets/mocks/catalyst/desktop/desktop (1).png";
+import desktop2 from "../../assets/mocks/catalyst/desktop/desktop (2).png";
+import desktop3 from "../../assets/mocks/catalyst/desktop/desktop (3).png";
+
 export const CATALYST = {
   id: 5,
   icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
   title: "catalyst.tsx",
   sourceCode: "https://github.com/GregoriBavaro/Catalyst",
   website: "https://www.catalyst.mk/",
-  mocks: [],
+  mocks: [
+    mobile1,
+    mobile2,
+    tablet1,
+    tablet2,
+    tablet3,
+    tablet4,
+    desktop1,
+    desktop2,
+    desktop3,
+  ],
   text: [
     "/**",
     " * Project: Catalyst",

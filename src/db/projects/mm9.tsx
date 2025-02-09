@@ -1,5 +1,18 @@
 import { FaReact } from "react-icons/fa";
 
+import mobile1 from "../../assets/mocks/mm9/mobile/mobile (1).png";
+import mobile2 from "../../assets/mocks/mm9/mobile/mobile (2).png";
+import mobile3 from "../../assets/mocks/mm9/mobile/mobile (3).png";
+import mobile4 from "../../assets/mocks/mm9/mobile/mobile (4).png";
+import mobile5 from "../../assets/mocks/mm9/mobile/mobile (5).png";
+
+import tablet1 from "../../assets/mocks/mm9/tablet/tablet (1).png";
+import tablet2 from "../../assets/mocks/mm9/tablet/tablet (2).png";
+import tablet3 from "../../assets/mocks/mm9/tablet/tablet (3).png";
+
+import desktop1 from "../../assets/mocks/mm9/desktop/desktop (1).png";
+import desktop2 from "../../assets/mocks/mm9/desktop/desktop (2).png";
+import desktop3 from "../../assets/mocks/mm9/desktop/desktop (3).png";
 
 export const MM9 = {
   id: 4,
@@ -7,7 +20,20 @@ export const MM9 = {
   title: "mm9-machinery.jsx",
   sourceCode: "https://github.com/GregoriBavaro/MM9Machinery",
   website: "https://mm-9-machinery.vercel.app/",
-  mocks: [],
+  mocks: [
+    mobile1,
+    mobile1,
+    mobile2,
+    mobile3,
+    mobile4,
+    mobile5,
+    tablet1,
+    tablet3,
+    tablet2,
+    desktop1,
+    desktop2,
+    desktop3,
+  ],
   text: [
     "/**",
     " * Project: MM-9 Machinery",

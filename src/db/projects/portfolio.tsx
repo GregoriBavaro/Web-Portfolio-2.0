@@ -1,5 +1,14 @@
 import { FaReact } from "react-icons/fa";
 
+import mobile1 from "../../assets/mocks/portfolio/mobile/mobile (1).png";
+import mobile2 from "../../assets/mocks/portfolio/mobile/mobile (2).png";
+
+import tablet1 from "../../assets/mocks/portfolio/tablet/tablet (1).png";
+import tablet2 from "../../assets/mocks/portfolio/tablet/tablet (2).png";
+
+import desktop1 from "../../assets/mocks/portfolio/desktop/desktop (1).png";
+import desktop2 from "../../assets/mocks/portfolio/desktop/desktop (2).png";
+import desktop3 from "../../assets/mocks/portfolio/desktop/desktop (3).png";
 
 export const PORTFOLIO = {
   id: 2,
@@ -7,7 +16,7 @@ export const PORTFOLIO = {
   title: "web-portfolio.jsx",
   sourceCode: "https://github.com/GregoriBavaro/portfolio",
   website: "https://portfolio-wb56.vercel.app/",
-  mocks: [],
+  mocks: [mobile1, mobile2, tablet2, tablet1, desktop1, desktop2, desktop3],
   text: [
     "/**",
     " * Project: Personal Web Portfolio",

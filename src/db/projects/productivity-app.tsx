@@ -1,5 +1,17 @@
 import { SiJavascript } from "react-icons/si";
 
+import mobile1 from "../../assets/mocks/productivity/mobile/mobile (1).png";
+import mobile2 from "../../assets/mocks/productivity/mobile/mobile (2).png";
+import mobile3 from "../../assets/mocks/productivity/mobile/mobile (3).png";
+import mobile4 from "../../assets/mocks/productivity/mobile/mobile (4).png";
+
+import tablet1 from "../../assets/mocks/productivity/tablet/tablet (1).png";
+import tablet2 from "../../assets/mocks/productivity/tablet/tablet (2).png";
+import tablet3 from "../../assets/mocks/productivity/tablet/tablet (3).png";
+
+import desktop1 from "../../assets/mocks/productivity/desktop/desktop (1).png";
+import desktop2 from "../../assets/mocks/productivity/desktop/desktop (2).png";
+
 export const PRODUCTIVITY = {
   id: 0,
   title: "productivity-app.js",
@@ -7,7 +19,17 @@ export const PRODUCTIVITY = {
     <SiJavascript style={{ color: "var(--yellow)", fontSize: "1.15rem" }} />
   ),
   sourceCode: "https://github.com/GregoriBavaro/Productivity-App",
-  mocks: [],
+  mocks: [
+    mobile1,
+    mobile2,
+    mobile3,
+    mobile4,
+    tablet1,
+    tablet2,
+    tablet3,
+    desktop1,
+    desktop2,
+  ],
   text: [
     "/**",
     " * Project: Productivity App",
