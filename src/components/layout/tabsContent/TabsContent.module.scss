@@ -1,3 +1,15 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }@else if $media == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 .tabsContent {
   width: 100%;
   overflow: hidden;
@@ -6,5 +18,11 @@
     height: calc(100% - 3.3rem);
     display: flex;
     background-color: var(--dark-purple);
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      overflow: auto;
+      gap: 2rem;
+    }
   }
 }

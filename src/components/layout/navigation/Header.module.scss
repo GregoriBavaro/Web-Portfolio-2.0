@@ -1,3 +1,19 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == "tablet-s" {
+    @media (max-width: 830px) {
+      @content;
+    }
+  } @else if $media == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 .header {
   display: flex;
   user-select: none;
@@ -11,6 +27,16 @@
     min-width: 304.46px;
     color: var(--green);
     border-right: 1px solid var(--steel-blue);
+
+    @include respond-to(tablet-s) {
+      min-width: unset;
+      white-space: nowrap;
+      padding: 0 1rem;
+    }
+
+    @include respond-to(mobile) {
+      padding: 0;
+    }
   }
 
   nav {
@@ -28,12 +54,17 @@
 
       &.active {
         border-bottom: 3px solid var(--orange);
-        color: var(--white)
+        color: var(--white);
       }
 
       a {
         display: flex;
         padding: 0.8rem 1.5rem;
+
+        @include respond-to(mobile) {
+          padding: 0.8rem 1rem;
+          white-space: nowrap;
+        }
       }
     }
 
@@ -41,7 +72,16 @@
       margin-left: auto;
       border-left: 1px solid var(--steel-blue);
       border-right: none;
+      border-bottom: unset;
       color: var(--green);
+
+      @include respond-to(mobile) {
+        margin-left: unset;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-left: unset;
+      }
     }
   }
 }

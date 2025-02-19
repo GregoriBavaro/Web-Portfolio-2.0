@@ -1,3 +1,15 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 .textContent {
   display: grid;
   gap: 2rem;
@@ -7,7 +19,17 @@
   height: 100%;
   flex: 1;
   overflow: auto;
-  
+
+  @include respond-to(tablet) {
+    height: unset;
+    overflow: unset;
+    white-space: nowrap;
+  }
+
+  @include respond-to(mobile) {
+    padding: 1rem 2rem 1rem 1.2rem;
+  }
+
   &__numbers {
     display: flex;
     flex-direction: column;

@@ -1,9 +1,22 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }@else if $media == "phone" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 .sidebar {
   user-select: none;
   border-right: 1px solid var(--steel-blue);
   background-color: var(--midnight-blue);
-  min-width: 304.46px;
   overflow: auto;
+  white-space: nowrap;
+  transition: 0.3s linear;
 
   a {
     color: var(--green);
@@ -16,6 +29,7 @@
   svg {
     font-size: 1.3rem;
     transition: 0.18s ease-in-out;
+    min-width: 20.79px;
   }
 
   &__header {

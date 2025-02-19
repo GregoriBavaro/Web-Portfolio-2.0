@@ -1,12 +1,14 @@
 import { create } from "zustand";
 
 interface SidebarMenu {
+  isMenuOpen: boolean;
   isPrimaryTab: boolean;
   isSecondaryTab: boolean;
   expendedMenus: { [id: number]: boolean };
   showDocument: string;
   documentIcon: React.ReactElement | null;
   navigateFromDetails: string;
+  setMenuOpen: (isMenuOpen: boolean) => void;
   setPrimaryTab: (isOpen: boolean) => void;
   setSecondaryTab: (isSecondaryTab: boolean) => void;
   toggleMenu: (id: number) => void;
@@ -16,6 +18,7 @@ interface SidebarMenu {
 }
 
 export const useSidebarMenu = create<SidebarMenu>((set) => ({
+  isMenuOpen: true,
   isPrimaryTab: true,
   isSecondaryTab: true,
   expendedMenus: { 0: true },
@@ -23,6 +26,7 @@ export const useSidebarMenu = create<SidebarMenu>((set) => ({
   documentIcon: null,
   isNavigatingFromTimeline: false,
   navigateFromDetails: "",
+  setMenuOpen: (isMenuOpen: boolean) => set({isMenuOpen}),
   setPrimaryTab: (isPrimaryTab: boolean) => set({ isPrimaryTab }),
   toggleMenu: (id: number) =>
     set((state) => ({

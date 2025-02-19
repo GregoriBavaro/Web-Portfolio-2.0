@@ -1,3 +1,15 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }@else if $media == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 .programmingLanguages {
   padding: 1rem 2rem 1rem 2.5rem;
   display: flex;
@@ -8,6 +20,16 @@
   border-left: 1px solid var(--steel-blue);
   overflow: auto;
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+
+  @include respond-to(tablet) {
+    box-shadow: unset;
+    overflow: unset;
+    border-left: unset;
+  }
+
+  @include respond-to(mobile) {
+    padding: 1rem 2rem 1rem 1.2rem;
+  }
 
   &__item {
     display: flex;

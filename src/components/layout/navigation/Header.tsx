@@ -1,6 +1,10 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import useWindowSize from "../../../hooks/use-windowSize";
+import { useSidebarMenu } from "../../../store/store";
+import { Squash as Hamburger } from "hamburger-react";
+
 import TransitionLink from "../../../utils/TransitionLink";
 
 import styles from "./Header.module.scss";
@@ -13,11 +17,19 @@ const PATHS = [
 
 const Header = () => {
   const pathname = usePathname();
+  const window = useWindowSize();
+  const { setMenuOpen, isMenuOpen } = useSidebarMenu();
+
+  const mobile =
+    (window.width ?? 767) < 767 ? (
+      <Hamburger size={20} toggled={isMenuOpen} toggle={() => setMenuOpen(!isMenuOpen)}/>
+    ) : (
+      <span>gregori - bavaro</span>
+    );
+
   return (
     <header className={styles.header}>
-      <div className={styles.header__name}>
-        <span>gregori - bavaro</span>
-      </div>
+      <div className={styles.header__name}>{mobile}</div>
       <nav className={styles.header__navigation}>
         <ul>
           {PATHS.map(({ id, title, path }) => (
