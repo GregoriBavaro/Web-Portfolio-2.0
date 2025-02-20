@@ -20,5 +20,5 @@ export const accordionAnimation = {
       ease: "linear",
     },
   },
-  layout: true,
+  
 };

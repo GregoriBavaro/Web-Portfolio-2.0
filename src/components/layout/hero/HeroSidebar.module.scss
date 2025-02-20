@@ -1,0 +1,22 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
+.heroSidebar {
+  min-width: 304.46px;
+  border-right: 1px solid var(--steel-blue);
+  background-color: var(--midnight-blue);
+
+  @include respond-to(mobile) {
+    position: absolute;
+    height: 100%;
+  }
+}

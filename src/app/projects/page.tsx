@@ -15,7 +15,7 @@ const Projects = () => {
   return (
     <>
       <Sidebar data={PROJECTS} />
-      <TabsContent data={PROJECTS}/>
+      <TabsContent data={PROJECTS} />
     </>
   );
 };

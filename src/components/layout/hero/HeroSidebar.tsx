@@ -1,30 +1,28 @@
 "use client";
 
 import { useEffect } from "react";
-import useWindowSize from "../../../hooks/use-windowSize";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { useSidebarMenu } from "../../../store/store";
-import PrimaryMenu from "./PrimaryMenu";
-import SecondaryTab from "./SecondaryMenu";
+import useWindowSize from "../../../hooks/use-windowSize";
 
-import { DataProps } from "../../../types/data.types";
+import SecondaryTab from "../../../components/ui/sidebar/SecondaryMenu";
 
-import styles from "./Sidebar.module.scss";
+import styles from "./HeroSidebar.module.scss";
 
-const Sidebar = ({ data }: DataProps) => {
+const sidebarVariants = {
+  open: {
+    x: "0%",
+    transition: { duration: 0.3, ease: "linear" },
+  },
+  closed: {
+    x: "-100%",
+    transition: { duration: 0.3, ease: "linear" },
+  },
+};
+
+const HeroSidebar = () => {
   const { isMenuOpen, setMenuOpen } = useSidebarMenu();
   const window = useWindowSize();
-
-  const sidebarVariants = {
-    open: {
-      x: "0%",
-      transition: { duration: 0.3, ease: "linear" },
-    },
-    closed: {
-      x: "-100%",
-      transition: { duration: 0.3, ease: "linear" },
-    },
-  };
 
   const isNotMobile = (window.width ?? 767) > 767;
 
@@ -37,20 +35,19 @@ const Sidebar = ({ data }: DataProps) => {
   return (
     <AnimatePresence>
       {isMenuOpen && (
-        <m.section
+        <m.div
           layoutId="sidebar"
           initial="closed"
           animate="open"
           exit="closed"
           variants={sidebarVariants}
-          className={styles.sidebar}
+          className={styles.heroSidebar}
         >
-          <PrimaryMenu data={data} />
           <SecondaryTab />
-        </m.section>
+        </m.div>
       )}
     </AnimatePresence>
   );
 };
 
-export default Sidebar;
+export default HeroSidebar;
