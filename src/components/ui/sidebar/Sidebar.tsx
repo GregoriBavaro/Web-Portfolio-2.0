@@ -38,10 +38,10 @@ const Sidebar = ({ data }: DataProps) => {
     <AnimatePresence>
       {isMenuOpen && (
         <m.section
-          
-          initial={isNotMobile ? "open" : "closed"}
+          layoutId="sidebar"
+          initial="closed"
           animate="open"
-          exit={isNotMobile ? undefined : "closed"}
+          exit="closed"
           variants={sidebarVariants}
           className={styles.sidebar}
         >

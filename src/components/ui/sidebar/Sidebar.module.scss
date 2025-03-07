@@ -17,10 +17,7 @@
   overflow: auto;
   white-space: nowrap;
   min-width: 304.46px;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.3s ease-in-out;
-  backface-visibility: hidden;
+ 
 
   @include respond-to(mobile) {
     position: absolute;
@@ -30,9 +27,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  &--closed {
-    transform: translate3d(-100%, 0, 0); // 🔹 Moves off-screen when closed
-  }
+  
 
   a {
     color: var(--green);
