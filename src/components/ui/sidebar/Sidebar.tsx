@@ -38,8 +38,8 @@ const Sidebar = ({ data }: DataProps) => {
   }, [isNotMobile]);
 
   return (
-    <AnimatePresence>
-      {isMenuOpen && (
+    
+      isMenuOpen && (
         <m.section
           initial={isNotMobile ? "open" : "closed"}
           animate="open"
@@ -51,8 +51,8 @@ const Sidebar = ({ data }: DataProps) => {
           <PrimaryMenu data={data} />
           <SecondaryTab />
         </m.section>
-      )}
-    </AnimatePresence>
+      )
+    
   );
 };
 
