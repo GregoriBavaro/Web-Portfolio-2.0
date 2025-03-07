@@ -14,9 +14,10 @@
   user-select: none;
   border-right: 1px solid var(--steel-blue);
   background-color: var(--midnight-blue);
-  overflow: auto;
+  overflow: hidden;
   white-space: nowrap;
   min-width: 304.46px;
+ 
 
   @include respond-to(mobile) {
     position: absolute;

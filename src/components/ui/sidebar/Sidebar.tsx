@@ -18,13 +18,16 @@ const Sidebar = ({ data }: DataProps) => {
   const sidebarVariants = {
     open: {
       x: "0%",
-      transition: { duration: 0.3, ease: "linear" },
+  
+      transition: { duration: 0.3, ease: "easeOut" },
     },
     closed: {
       x: "-100%",
-      transition: { duration: 0.3, ease: "linear" },
+    
+      transition: { duration: 0.3, ease: "easeIn" },
     },
   };
+  
 
   const isNotMobile = (window.width ?? 767) > 767;
 
