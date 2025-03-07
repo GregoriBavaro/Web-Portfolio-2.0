@@ -29,17 +29,20 @@ const Sidebar = ({ data }: DataProps) => {
   const isNotMobile = (window.width ?? 767) > 767;
 
   useEffect(() => {
-    if (isNotMobile) {
+    if (isNotMobile && !isMenuOpen) {
       setMenuOpen(true);
+    } else if (!isNotMobile && isMenuOpen) {
+      setMenuOpen(false); // Optionally close it when switching back to mobile
     }
-  }, [window]);
+  }, [isNotMobile]);
 
   return (
     <AnimatePresence>
       {isMenuOpen && (
         <m.section
+          initial={isNotMobile ? "open" : "closed"}
           animate="open"
-          exit={isNotMobile ? undefined : "closed"} 
+          exit={isNotMobile ? undefined : "closed"}
           variants={sidebarVariants}
           className={styles.sidebar}
         >

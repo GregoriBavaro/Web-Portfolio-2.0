@@ -18,7 +18,7 @@ interface SidebarMenu {
 }
 
 export const useSidebarMenu = create<SidebarMenu>((set) => ({
-  isMenuOpen: true,
+  isMenuOpen: false,
   isPrimaryTab: true,
   isSecondaryTab: true,
   expendedMenus: { 0: true },
