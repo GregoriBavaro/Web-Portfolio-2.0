@@ -36,17 +36,11 @@ const Sidebar = ({ data }: DataProps) => {
   const window = useWindowSize();
   const isNotMobile = (window.width ?? 767) > 767;
 
-  useEffect(() => {
-    if (isNotMobile && !isMenuOpen) {
-      setMenuOpen(true);
-    } else if (!isNotMobile && isMenuOpen) {
-      setMenuOpen(false);
-    }
-  }, [isNotMobile]);
+  
 
   return (
-    
-      isMenuOpen && (
+    <AnimatePresence>
+      {isMenuOpen && (
         <m.section
           {...sidebarAnimation}
           className={styles.sidebar}
@@ -54,8 +48,8 @@ const Sidebar = ({ data }: DataProps) => {
           <PrimaryMenu data={data} />
           <SecondaryTab />
         </m.section>
-      )
-    
+      )}
+    </AnimatePresence>
   );
 };
 
