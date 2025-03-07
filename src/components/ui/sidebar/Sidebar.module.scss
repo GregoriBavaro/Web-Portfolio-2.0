@@ -18,7 +18,7 @@
   white-space: nowrap;
   min-width: 304.46px;
   will-change: transform;
-  transition: transform 0s ease-in-out;
+  transition: transform 0.3s ease-out;
   backface-visibility: hidden;
 
   @include respond-to(mobile) {
