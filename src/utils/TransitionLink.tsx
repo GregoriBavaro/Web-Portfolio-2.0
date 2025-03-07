@@ -5,7 +5,11 @@ interface TransitionLinkProps extends LinkProps {
   href: string;
 }
 
-const TransitionLink = ({ children, href, ...props }: TransitionLinkProps) => {
+const TransitionLink = ({
+  children,
+  href,
+  ...props
+}: TransitionLinkProps) => {
   return (
     <Link href={href} {...props}>
       {children}

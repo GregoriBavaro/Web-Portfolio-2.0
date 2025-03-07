@@ -1,3 +1,15 @@
+@mixin respond-to($media) {
+  @if $media == "tablet" {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $media == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 .footer {
   display: flex;
   border-top: 1px solid var(--steel-blue);
@@ -9,6 +21,10 @@
     padding: 0.8rem 1.5rem;
     border-right: 1px solid var(--steel-blue);
     align-items: center;
+
+    @include respond-to(mobile) {
+      display: none;
+    }
 
     span {
       white-space: nowrap;
@@ -28,6 +44,10 @@
       margin-left: auto;
       border-left: 1px solid var(--steel-blue);
       border-right: none;
+
+      @include respond-to(mobile) {
+        border-left: none;
+      }
     }
 
     a {

@@ -24,5 +24,9 @@
       overflow: auto;
       gap: 2rem;
     }
+
+    @include respond-to(mobile) {
+      height: calc(100vh - 150px);
+    }
   }
 }

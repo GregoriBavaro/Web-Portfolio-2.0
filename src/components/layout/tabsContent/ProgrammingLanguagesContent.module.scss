@@ -28,7 +28,8 @@
   }
 
   @include respond-to(mobile) {
-    padding: 1rem 2rem 1rem 1.2rem;
+    padding: 1rem;
+    box-shadow: unset;
   }
 
   &__item {

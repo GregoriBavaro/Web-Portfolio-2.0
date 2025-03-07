@@ -1,18 +1,24 @@
 "use client";
 
+import React from "react";
 import { usePathname } from "next/navigation";
 import useWindowSize from "../../../hooks/use-windowSize";
 import { useSidebarMenu } from "../../../store/store";
 import { Squash as Hamburger } from "hamburger-react";
+
+import { BiSolidInfoCircle } from "react-icons/bi";
+import { RiHomeFill } from "react-icons/ri";
+import { FaFolderClosed } from "react-icons/fa6";
+import { FaFileDownload } from "react-icons/fa";
 
 import TransitionLink from "../../../utils/TransitionLink";
 
 import styles from "./Header.module.scss";
 
 const PATHS = [
-  { id: 0, title: "_hello", path: "/" },
-  { id: 1, title: "_about-me", path: "/about" },
-  { id: 2, title: "_projects", path: "/projects" },
+  { id: 0, title: "_hello", path: "/", icon: RiHomeFill },
+  { id: 1, title: "_about-me", path: "/about", icon: BiSolidInfoCircle },
+  { id: 2, title: "_projects", path: "/projects", icon: FaFolderClosed },
 ];
 
 const Header = () => {
@@ -22,7 +28,11 @@ const Header = () => {
 
   const mobile =
     (window.width ?? 767) < 767 ? (
-      <Hamburger size={20} toggled={isMenuOpen} toggle={() => setMenuOpen(!isMenuOpen)}/>
+      <Hamburger
+        size={20}
+        toggled={isMenuOpen}
+        toggle={() => setMenuOpen(!isMenuOpen)}
+      />
     ) : (
       <span>gregori - bavaro</span>
     );
@@ -32,9 +42,16 @@ const Header = () => {
       <div className={styles.header__name}>{mobile}</div>
       <nav className={styles.header__navigation}>
         <ul>
-          {PATHS.map(({ id, title, path }) => (
+          {PATHS.map(({ id, title, path, icon }) => (
             <li key={id} className={pathname === path ? styles.active : ""}>
-              <TransitionLink href={path}>{title}</TransitionLink>
+              <TransitionLink href={path}>
+                <span className={styles["header__navigation-icon"]}>
+                  {React.createElement(icon)}
+                </span>
+                <span className={styles["header__navigation-title"]}>
+                  {title}
+                </span>
+              </TransitionLink>
             </li>
           ))}
           <li className={styles["header__navigation-cv"]}>
@@ -42,7 +59,10 @@ const Header = () => {
               href="/Gregori-Bavaro-Portfolio.pdf"
               download="Gregori-Bavaro-Portfolio.pdf"
             >
-              Download Portfolio
+              <span className={styles["header__navigation-icon"]}>
+                <FaFileDownload />
+              </span>
+              <span>Portfolio</span>
             </a>
           </li>
         </ul>

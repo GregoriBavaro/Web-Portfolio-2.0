@@ -19,6 +19,12 @@
     box-shadow: unset;
   }
 
+  @include respond-to(mobile) {
+    box-shadow: unset;
+    border-left: unset;
+    padding: 1rem;
+  }
+
   &__list {
     display: flex;
     padding: 1rem 2rem 1rem 2.5rem;
