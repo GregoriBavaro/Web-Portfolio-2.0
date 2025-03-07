@@ -18,8 +18,8 @@
   white-space: nowrap;
   min-width: 304.46px;
   will-change: transform;
-  transition: transform 0s ease-out;
   backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 
   @include respond-to(mobile) {
     position: absolute;
@@ -27,7 +27,6 @@
     z-index: 1;
     width: 304.46px;
     -webkit-overflow-scrolling: touch;
-    transform: translate3d(0, 0, 0);
   }
 
   &--closed {

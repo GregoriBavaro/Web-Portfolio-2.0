@@ -18,13 +18,14 @@ const Sidebar = ({ data }: DataProps) => {
   const sidebarVariants = {
     open: {
       x: "0%",
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.25, ease: "easeInOut" }, 
     },
     closed: {
       x: "-100%",
-      transition: { duration: 0.3, ease: "easeIn" },
+      transition: { duration: 0.25, ease: "easeInOut" },
     },
   };
+  
 
   const isNotMobile = (window.width ?? 767) > 767;
 
@@ -45,6 +46,7 @@ const Sidebar = ({ data }: DataProps) => {
           exit={isNotMobile ? undefined : "closed"}
           variants={sidebarVariants}
           className={styles.sidebar}
+          style={{ transform: "translateZ(0)" }}
         >
           <PrimaryMenu data={data} />
           <SecondaryTab />
