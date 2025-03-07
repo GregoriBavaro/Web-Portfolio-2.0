@@ -94,11 +94,10 @@
       color: var(--green);
 
       @include respond-to(mobile) {
-        margin-left: unset;
         border-left: unset;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: right;
       }
     }
   }
