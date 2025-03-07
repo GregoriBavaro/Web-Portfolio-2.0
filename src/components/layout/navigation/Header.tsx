@@ -44,7 +44,7 @@ const Header = () => {
         <ul>
           {PATHS.map(({ id, title, path, icon }) => (
             <li key={id} className={pathname === path ? styles.active : ""}>
-              <TransitionLink href={path}>
+              <TransitionLink href={path} >
                 <span className={styles["header__navigation-icon"]}>
                   {React.createElement(icon)}
                 </span>
