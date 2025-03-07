@@ -39,9 +39,10 @@ const Sidebar = ({ data }: DataProps) => {
     <AnimatePresence>
       {isMenuOpen && (
         <m.section
-          
+        animate="open"
+        exit={isNotMobile ? undefined : "closed"} // Closes only on mobile
+          variants={sidebarVariants}
           className={styles.sidebar}
-          style={{ transform: isMenuOpen ? "translateX(0)" : "translateX(-100%)" }}
         >
           <PrimaryMenu data={data} />
           <SecondaryTab />
