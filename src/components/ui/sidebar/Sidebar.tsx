@@ -18,11 +18,11 @@ const Sidebar = ({ data }: DataProps) => {
   const sidebarVariants = {
     open: {
       x: "0%",
-      transition: {  ease: "easeOut" },
+      transition: { duration: 0.3, ease: "easeOut" },
     },
     closed: {
       x: "-100%",
-      transition: {  ease: "easeIn" },
+      transition: { duration: 0.3, ease: "easeIn" },
     },
   };
 

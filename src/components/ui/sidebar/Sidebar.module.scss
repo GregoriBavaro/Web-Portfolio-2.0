@@ -18,7 +18,7 @@
   white-space: nowrap;
   min-width: 304.46px;
   will-change: transform;
-  transition: transform 0.3s ease-out;
+  transition: transform 0s ease-out;
   backface-visibility: hidden;
 
   @include respond-to(mobile) {
@@ -28,6 +28,10 @@
     width: 304.46px;
     -webkit-overflow-scrolling: touch;
     transform: translate3d(0, 0, 0);
+  }
+
+  &--closed {
+    transform: translate3d(-100%, 0, 0);
   }
 
   
