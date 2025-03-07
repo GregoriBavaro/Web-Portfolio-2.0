@@ -11,14 +11,23 @@ import { DataProps } from "../../../types/data.types";
 
 import styles from "./Sidebar.module.scss";
 
-const sidebarVariants = {
-  open: {
-    x: "0%",
-    transition: { duration: 0.25, ease: "easeInOut" },
-  },
-  closed: {
+const sidebarAnimation = {
+  initial: {
     x: "-100%",
-    transition: { duration: 0.25, ease: "easeInOut" },
+  },
+  animate: {
+    x: "0%",
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
+  },
+  exit: {
+    x: "-100%",
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
   },
 };
 
@@ -39,9 +48,7 @@ const Sidebar = ({ data }: DataProps) => {
     <AnimatePresence>
       {isMenuOpen && (
         <m.section
-        animate="open"
-        exit={isNotMobile ? undefined : "closed"} // Closes only on mobile
-          variants={sidebarVariants}
+          {...sidebarAnimation}
           className={styles.sidebar}
         >
           <PrimaryMenu data={data} />
