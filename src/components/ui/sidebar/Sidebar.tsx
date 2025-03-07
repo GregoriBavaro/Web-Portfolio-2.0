@@ -11,7 +11,14 @@ import { DataProps } from "../../../types/data.types";
 
 import styles from "./Sidebar.module.scss";
 
-const sidebarAnimation = {
+
+
+const Sidebar = ({ data }: DataProps) => {
+  const { isMenuOpen, setMenuOpen } = useSidebarMenu();
+  const window = useWindowSize();
+  const isNotMobile = (window.width ?? 767) > 767;
+
+  const sidebarAnimation = {
   initial: {
     x: "-100%",
   },
@@ -31,12 +38,13 @@ const sidebarAnimation = {
   },
 };
 
-const Sidebar = ({ data }: DataProps) => {
-  const { isMenuOpen, setMenuOpen } = useSidebarMenu();
-  const window = useWindowSize();
-  const isNotMobile = (window.width ?? 767) > 767;
-
-  
+  useEffect(() => {
+    if (isNotMobile && !isMenuOpen) {
+      setMenuOpen(true);
+    } else if (!isNotMobile && isMenuOpen) {
+      setMenuOpen(false);
+    }
+  }, [isNotMobile]);
 
   return (
     <AnimatePresence>
