@@ -50,7 +50,7 @@ export const MENU_LIST: MenuItem[] = [
             * <span>Welcome to my portfolio.</span>
           </>,
           " *",
-          " * I am Gregori Bavaro, a passionate Web Developer with over four of experience",
+          " * I am Gregori Bavaro, a passionate Web Developer with over four years of experience",
           " * in creating modern, responsive, and user-friendly websites. I specialize",
           " * in utilizing the latest web technologies such as Next.js, React, TypeScript,",
           " * and SCSS to build dynamic and performant web applications. With a strong",
