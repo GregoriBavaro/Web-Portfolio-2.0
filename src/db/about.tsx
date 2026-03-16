@@ -18,6 +18,11 @@ import sass from "../assets/images/sass.png";
 import typescript from "../assets/images/typescript.png";
 import zustand from "../assets/images/zustand.png";
 import csharp from "../assets/images/c-sharp.png";
+import python from "../assets/images/python.png";
+import excel from "../assets/images/Excel.png";
+import zoho from "../assets/images/zoho.png";
+import linux from "../assets/images/linux.png";
+import powershell from "../assets/images/powershell.png";
 
 type MenuItem = {
   id: number;
@@ -92,6 +97,7 @@ export const MENU_LIST: MenuItem[] = [
               { id: 1, title: "JavaScript", icon: js },
               { id: 2, title: "TypeScript", icon: typescript },
               { id: 3, title: "C#", icon: csharp },
+              { id: 4, title: "Python", icon: python },
             ],
           },
           {
@@ -117,8 +123,18 @@ export const MENU_LIST: MenuItem[] = [
             id: 3,
             title: "// Tools & Services",
             list: [
-              { id: 10, title: "git", icon: git },
-              { id: 11, title: "github", icon: github },
+              { id: 0, title: "git", icon: git },
+              { id: 1, title: "github", icon: github },
+              { id: 2, title: "Zoho", icon: zoho },
+              { id: 3, title: "Excel", icon: excel },
+            ],
+          },
+          {
+            id: 4,
+            title: "// Systems & Administration",
+            list: [
+              { id: 0, title: "Linux Administration", icon: linux },
+              { id: 1, title: "PowerShell", icon: powershell },
             ],
           },
         ],
