@@ -71,7 +71,7 @@ export const SIENNA = {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.sienna.mk/"
+        href="https://pastry-boutique-git-main-gregoribavaros-projects.vercel.app/"
       >
         [Sienna Pastry Boutique]
       </a>

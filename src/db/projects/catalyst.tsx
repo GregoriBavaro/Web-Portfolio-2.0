@@ -60,7 +60,7 @@ export const CATALYST = {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.catalyst.mk/"
+        href="https://catalyst-git-main-gregoribavaros-projects.vercel.app/"
       >
         [Catalyst]
       </a>
