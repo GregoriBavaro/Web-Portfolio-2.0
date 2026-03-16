@@ -21,7 +21,7 @@ export const SIENNA = {
   id: 7,
   icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
   title: "sienna.jsx",
-  website: "https://www.sienna.mk/",
+  website: "https://pastry-boutique-git-main-gregoribavaros-projects.vercel.app/",
   mocks: [
     mobile1,
     mobile5,

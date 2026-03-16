@@ -17,7 +17,7 @@ export const CATALYST = {
   icon: <FaReact style={{ color: "var(--sky-blue)" }} />,
   title: "catalyst.tsx",
   sourceCode: "https://github.com/GregoriBavaro/Catalyst",
-  website: "https://www.catalyst.mk/",
+  website: "https://catalyst-git-main-gregoribavaros-projects.vercel.app/",
   mocks: [
     mobile1,
     mobile2,
